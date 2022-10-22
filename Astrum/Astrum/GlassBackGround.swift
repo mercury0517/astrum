@@ -17,8 +17,8 @@ struct GlassBackGround: View {
             .opacity(0.6)
             Rectangle().foregroundColor(.white)
         }
-        .opacity(0.1)
-        .blur(radius: 1)
+        .opacity(0.15)
+        .blur(radius: 2)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
