@@ -17,13 +17,15 @@ struct GlassBackGround: View {
             .opacity(0.6)
             Rectangle().foregroundColor(.white)
         }
-        .opacity(0.15)
-        .blur(radius: 2)
+        .opacity(0.1)
+        .blur(radius: 1)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-        .stroke(.white, lineWidth: 0.5)
+                .stroke(Color.lightShadowColor, lineWidth: 0.5)
         )
+        .shadow(color: Color.darkShadowColor, radius: 16, x: 9, y: 9)
+        .shadow(color: Color.lightShadowColor, radius: 16, x: -9, y: -9)
         .frame(width: UIScreen.main.bounds.width - 32, height: 300)
         .padding()
     }
