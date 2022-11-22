@@ -11,18 +11,7 @@ import SwiftUI
 struct AstrumApp: App {
     var body: some Scene {
         WindowGroup {
-            ZStack{
-                LinearGradient(
-                    gradient: Gradient(colors: [.middleGreen, .darkGreen]), startPoint: .leading, endPoint: .trailing
-                )
-                .edgesIgnoringSafeArea(.all)
-                
-                VStack {
-                    GlassCardView()
-                        .padding(.top, 10)
-                    Spacer()
-                }
-            }
+            ContentView()
         }
     }
 }
