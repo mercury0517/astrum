@@ -11,11 +11,13 @@ struct MyDeskView: View {
     var body: some View {
         ZStack{
             LinearGradient(
-                gradient: Gradient(colors: [.middleGreen, .darkGreen]), startPoint: .leading, endPoint: .trailing
+                gradient: Gradient(colors: [.yellowLight, .yellowDark]), startPoint: .leading, endPoint: .trailing
             )
             .edgesIgnoringSafeArea(.all)
 
             VStack {
+                GlassCardView()
+                    .padding(.top, 16)
                 GlassCardView()
                     .padding(.top, 16)
                 Spacer()
