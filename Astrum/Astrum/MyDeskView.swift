@@ -10,10 +10,7 @@ import SwiftUI
 struct MyDeskView: View {
     var body: some View {
         ZStack{
-            LinearGradient(
-                gradient: Gradient(colors: [.yellowLight, .yellowDark]), startPoint: .leading, endPoint: .trailing
-            )
-            .edgesIgnoringSafeArea(.all)
+            Color.black.edgesIgnoringSafeArea(.all)
 
             VStack {
                 GlassCardView()

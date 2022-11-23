@@ -12,9 +12,9 @@ struct GlassCardView: View {
     
     var body: some View {
         Rectangle()
-            .foregroundColor(.yellowDark)
-            .opacity(0.3)
-            .blur(radius: 5)
+            .foregroundColor(.white)
+            .opacity(0.2)
+            .blur(radius: 10)
             .cornerRadius(20)
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
