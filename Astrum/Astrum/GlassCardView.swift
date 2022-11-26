@@ -20,7 +20,7 @@ struct GlassCardView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.lightShadowColor, lineWidth: 0.5)
             )
-            .frame(width: itemSize, height: 250)
+            .frame(width: itemSize, height: 400)
     }
 }
 

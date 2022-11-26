@@ -12,12 +12,14 @@ struct MyDeskView: View {
         ZStack{
             Color.black.edgesIgnoringSafeArea(.all)
 
-            VStack {
-                GlassCardView()
-                    .padding(.top, 16)
-                GlassCardView()
-                    .padding(.top, 16)
-                Spacer()
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    PremiumCardView()
+                        .padding(.top, 16)
+                    GlassCardView()
+                        .padding(.top, 16)
+                    Spacer()
+                }
             }
         }
     }
