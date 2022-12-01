@@ -10,7 +10,8 @@ import SwiftUI
 struct MyDeskView: View {
     var body: some View {
         ZStack{
-            Color.konkikyou.edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [.matteBlack, .black]), startPoint: .leading, endPoint: .trailing)
+                        .ignoresSafeArea()
 
             ScrollView(showsIndicators: false) {
                 VStack {

@@ -13,6 +13,7 @@ extension Color {
     static let darkGreen = Color("darkGreen")
     static let konkikyou = Color("konkikyou")
     static let lightShadowColor = Color("lightShadowColor")
+    static let matteBlack = Color("matteBlack")
     static let middleDarkShadowColor = Color("middleDarkShadowColor")
     static let middleGreen = Color("middleGreen")
     static let middleLightShadowColor = Color("middleLightShadowColor")
