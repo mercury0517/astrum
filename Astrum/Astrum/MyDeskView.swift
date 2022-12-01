@@ -10,14 +10,30 @@ import SwiftUI
 struct MyDeskView: View {
     var body: some View {
         ZStack{
-            Color.black.edgesIgnoringSafeArea(.all)
+            Color.konkikyou.edgesIgnoringSafeArea(.all)
 
             ScrollView(showsIndicators: false) {
                 VStack {
-                    PremiumCardView()
-                        .padding(.top, 16)
-                    GlassCardView()
-                        .padding(.top, 16)
+                    ZStack {
+                        GlassCardView()
+                        HStack {
+                            Text("デスクの写真を追加")
+                                .foregroundColor(.white)
+                            Button(action: {
+                                print("tap buton")
+                            }) {
+                                Image(systemName: "plus")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 16, height: 16)
+                            }
+                            .padding(8)
+                            .accentColor(Color.white)
+                            .background(Color.blue)
+                            .cornerRadius(16)
+                        }
+                    }
+                    .padding(.top, 16)
                     Spacer()
                 }
             }
