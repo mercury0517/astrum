@@ -16,10 +16,11 @@ struct PremiumCardView: View {
             center: .center,
             angle: .degrees(45)
         )
-        .border(width: 0.5, edges: [.top, .leading], color: .white)
-        .border(width: 0.5, edges: [.trailing, .bottom], color: .black)
-        .frame(width: itemWidth, height: 250)
+        .border(width: 1, edges: [.top, .leading], color: .white)
+        .border(width: 1, edges: [.trailing, .bottom], color: .matteBlack)
+        .frame(width: itemWidth, height: 300)
         .foregroundColor(.black)
+        .cornerRadius(15)
     }
 }
 

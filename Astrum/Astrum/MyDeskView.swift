@@ -16,7 +16,7 @@ struct MyDeskView: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     ZStack {
-                        GlassCardView()
+                        PremiumCardView()
                         HStack {
                             Text("デスクの写真を追加")
                                 .foregroundColor(.white)
