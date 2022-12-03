@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PremiumCardView: View {
+struct DisplayFrameView: View {
     let itemWidth = UIScreen.main.bounds.width - 32
     
     var body: some View {
@@ -16,8 +16,8 @@ struct PremiumCardView: View {
             center: .center,
             angle: .degrees(45)
         )
-        .border(width: 1, edges: [.top, .leading], color: .white)
-        .border(width: 1, edges: [.trailing, .bottom], color: .matteBlack)
+        .border(width: 0.5, edges: [.top, .leading], color: .white)
+        .border(width: 0.5, edges: [.trailing, .bottom], color: .grayDark)
         .frame(width: itemWidth, height: 250)
         .foregroundColor(.black)
         .cornerRadius(15)
@@ -26,6 +26,6 @@ struct PremiumCardView: View {
 
 struct PremiumCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PremiumCardView()
+        DisplayFrameView()
     }
 }

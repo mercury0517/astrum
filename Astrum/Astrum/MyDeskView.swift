@@ -14,20 +14,9 @@ struct MyDeskView: View {
                         .ignoresSafeArea()
 
             ScrollView(showsIndicators: false) {
-                VStack {
-                    ZStack {
-                        PremiumCardView()
-                        RoundedRectangle(cornerRadius: 15)
-                            .padding(EdgeInsets(
-                                top: 10,
-                                leading: 25,
-                                bottom: 20,
-                                trailing: 25
-                            ))
-                    }
+                MyDisplayView()
                     .padding(.top, 16)
-                    Spacer()
-                }
+                Spacer()
             }
         }
     }

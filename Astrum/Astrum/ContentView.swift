@@ -18,8 +18,8 @@ struct ContentView: View {
             MyDeskView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "chair")
-                        Text("TabA")
+                        Image(systemName: "desktopcomputer")
+                        Text("My Desk")
                     }
             }.tag(1)
             MyDeskView()
