@@ -12,17 +12,18 @@ struct MyDisplayView: View {
     
     var body: some View {
         VStack {
+            // ディスプレイのモニター部分
             ZStack {
                 AngularGradient(
                     gradient: Gradient(colors: [.grayDark, .grayLight, .grayDark]),
                     center: .center,
                     angle: .degrees(45)
                 )
-                    .border(width: 0.5, edges: [.top, .leading], color: .white)
-                    .border(width: 0.5, edges: [.trailing, .bottom], color: .grayDark)
-                    .frame(width: itemWidth, height: 250)
-                    .foregroundColor(.black)
-                    .cornerRadius(15)
+                .border(width: 0.5, edges: [.top, .leading], color: .white)
+                .border(width: 0.5, edges: [.trailing, .bottom], color: .grayDark)
+                .frame(width: itemWidth, height: 250)
+                .foregroundColor(.black)
+                .cornerRadius(15)
                 RoundedRectangle(cornerRadius: 15)
                     .fill(
                         LinearGradient(
@@ -34,14 +35,15 @@ struct MyDisplayView: View {
                     .padding(EdgeInsets(
                         top: 10,
                         leading: 10,
-                        bottom: 15,
+                        bottom: 20,
                         trailing: 10
                     ))
                     .frame(width: itemWidth, height: 250)
-                Text("Let's start with setting up your desk!")
-                    .foregroundColor(.green)
+                Text("Let's start with setting up your desk.")
+                    .foregroundColor(.backLightYellow)
                     .font(.title)
             }
+            // ディスプレイの土台部分
             Rectangle()
                 .fill(
                     LinearGradient(
