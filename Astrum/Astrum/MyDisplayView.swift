@@ -13,7 +13,16 @@ struct MyDisplayView: View {
     var body: some View {
         VStack {
             ZStack {
-                DisplayFrameView()
+                AngularGradient(
+                    gradient: Gradient(colors: [.grayDark, .grayLight, .grayDark]),
+                    center: .center,
+                    angle: .degrees(45)
+                )
+                    .border(width: 0.5, edges: [.top, .leading], color: .white)
+                    .border(width: 0.5, edges: [.trailing, .bottom], color: .grayDark)
+                    .frame(width: itemWidth, height: 250)
+                    .foregroundColor(.black)
+                    .cornerRadius(15)
                 RoundedRectangle(cornerRadius: 15)
                     .fill(
                         LinearGradient(
@@ -29,6 +38,9 @@ struct MyDisplayView: View {
                         trailing: 10
                     ))
                     .frame(width: itemWidth, height: 250)
+                Text("Let's start with setting up your desk!")
+                    .foregroundColor(.green)
+                    .font(.title)
             }
             Rectangle()
                 .fill(
@@ -39,7 +51,7 @@ struct MyDisplayView: View {
                     )
                 )
                 .frame(width: 120, height: 50)
-                .padding(.top, -9)
+                .padding(.top, -18)
         }
     }
 }
