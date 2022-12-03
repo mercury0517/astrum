@@ -17,7 +17,7 @@ struct MyDeskView: View {
             )
                 .ignoresSafeArea()
             ScrollView(showsIndicators: false) {
-                MyDisplayView()
+                DisplayView()
                     .padding(.top, 16)
                 Spacer()
             }
