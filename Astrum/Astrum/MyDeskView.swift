@@ -10,9 +10,12 @@ import SwiftUI
 struct MyDeskView: View {
     var body: some View {
         ZStack{
-            LinearGradient(gradient: Gradient(colors: [.matteBlack, .black]), startPoint: .leading, endPoint: .trailing)
-                        .ignoresSafeArea()
-
+            LinearGradient(
+                gradient: Gradient(colors: [.matteBlack, .black]),
+                startPoint: .leading,
+                endPoint: .trailing
+            )
+                .ignoresSafeArea()
             ScrollView(showsIndicators: false) {
                 MyDisplayView()
                     .padding(.top, 16)
