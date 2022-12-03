@@ -12,13 +12,13 @@ struct PremiumCardView: View {
     
     var body: some View {
         AngularGradient(
-            gradient: Gradient(colors: [.yellowDark, .yellowLight, .yellowDark]),
+            gradient: Gradient(colors: [.grayDark, .grayLight, .grayDark]),
             center: .center,
             angle: .degrees(45)
         )
         .border(width: 1, edges: [.top, .leading], color: .white)
         .border(width: 1, edges: [.trailing, .bottom], color: .matteBlack)
-        .frame(width: itemWidth, height: 300)
+        .frame(width: itemWidth, height: 250)
         .foregroundColor(.black)
         .cornerRadius(15)
     }

@@ -17,22 +17,13 @@ struct MyDeskView: View {
                 VStack {
                     ZStack {
                         PremiumCardView()
-                        HStack {
-                            Text("デスクの写真を追加")
-                                .foregroundColor(.white)
-                            Button(action: {
-                                print("tap buton")
-                            }) {
-                                Image(systemName: "plus")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 16, height: 16)
-                            }
-                            .padding(8)
-                            .accentColor(Color.white)
-                            .background(Color.blue)
-                            .cornerRadius(16)
-                        }
+                        RoundedRectangle(cornerRadius: 15)
+                            .padding(EdgeInsets(
+                                top: 10,
+                                leading: 25,
+                                bottom: 20,
+                                trailing: 25
+                            ))
                     }
                     .padding(.top, 16)
                     Spacer()
