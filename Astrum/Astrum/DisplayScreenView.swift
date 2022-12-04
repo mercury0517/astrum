@@ -21,7 +21,7 @@ struct DisplayScreenView: View {
                     .frame(width: itemWidth - 10, height: 240)
                 Image(uiImage: image)
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .frame(width: itemWidth - 20, height: 230)
                     .cornerRadius(15)
                     .padding(10)
@@ -31,7 +31,7 @@ struct DisplayScreenView: View {
                 RoundedRectangle(cornerRadius: 15)
                     .fill(
                         LinearGradient(
-                            gradient: Gradient(colors: [.grayDark, .black]),
+                            gradient: Gradient(colors: [.gray, .black]),
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         )

@@ -12,7 +12,7 @@ struct DisplayStandView: View {
         Rectangle()
             .fill(
                 LinearGradient(
-                    gradient: Gradient(colors: [.grayDark, .grayLight]),
+                    gradient: Gradient(colors: [.gray, .grayLight]),
                     startPoint: .top,
                     endPoint: .bottom
                 )

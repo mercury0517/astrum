@@ -12,7 +12,7 @@ struct DisplayFrameView: View {
     
     var body: some View {
         AngularGradient(
-            gradient: Gradient(colors: [.grayDark, .grayLight, .grayDark]),
+            gradient: Gradient(colors: [.gray, .grayLight, .gray]),
             center: .center,
             angle: .degrees(45)
         )
