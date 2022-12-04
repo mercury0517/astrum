@@ -31,7 +31,7 @@ struct DisplayScreenView: View {
                 RoundedRectangle(cornerRadius: 15)
                     .fill(
                         LinearGradient(
-                            gradient: Gradient(colors: [.gray, .black]),
+                            gradient: Gradient(colors: [.matteBlack, .black]),
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         )

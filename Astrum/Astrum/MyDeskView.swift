@@ -41,16 +41,16 @@ struct MyDeskView: View {
                         } label: {
                                 Image(systemName: "ellipsis.circle")
                                     .resizable()
-                                    .frame(width: 25, height: 25)
-                                    .padding(5)
+                                    .frame(width: 30, height: 30)
+                                    .padding(8)
                                     .accentColor(Color.white)
                                     .background(Color.clear)
-                                    .cornerRadius(25)
+                                    .cornerRadius(30)
                         }
                         .padding(.trailing, 16)
                     }
+                        .padding(.top, 16)
                     DisplayView(deskImage: $deskImage)
-                        .padding(.top, 8)
                     Spacer()
                 }
             }
