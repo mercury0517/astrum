@@ -21,14 +21,10 @@ struct DisplayScreenView: View {
                     .frame(width: itemWidth - 10, height: 240)
                 Image(uiImage: image)
                     .resizable()
+                    .scaledToFit()
                     .frame(width: itemWidth - 20, height: 230)
                     .cornerRadius(15)
-                    .padding(EdgeInsets(
-                        top: 10,
-                        leading: 10,
-                        bottom: 10,
-                        trailing: 10
-                    ))
+                    .padding(10)
             }
         } else {
             ZStack {
@@ -40,12 +36,7 @@ struct DisplayScreenView: View {
                             endPoint: .bottomTrailing
                         )
                     )
-                    .padding(EdgeInsets(
-                        top: 10,
-                        leading: 10,
-                        bottom: 10,
-                        trailing: 10
-                    ))
+                    .padding(5)
                     .frame(width: itemWidth, height: 250)
                 VStack {
                     Text("Let's start with setting up your desk.")
