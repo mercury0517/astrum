@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct DisplayScreenView: View {
-    @State var image: UIImage?
+    @Binding var deskImage: UIImage?
     @State var showingAlert: Bool = false
     
     let itemWidth = UIScreen.main.bounds.width - 32
     
     var body: some View {
-        if let image = image {
+        if let unwrappedImage = deskImage {
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(.black)
                     .frame(width: itemWidth - 10, height: 240)
-                Image(uiImage: image)
+                Image(uiImage: unwrappedImage)
                     .resizable()
                     .scaledToFill()
                     .frame(width: itemWidth - 20, height: 230)
@@ -40,7 +40,7 @@ struct DisplayScreenView: View {
                     .frame(width: itemWidth, height: 250)
                 VStack {
                     Text("Let's start with setting up your desk.")
-                        .foregroundColor(.backLightYellow)
+                        .foregroundColor(.green)
                         .font(.title)
                     Button(action: {
                         showingAlert = true
@@ -57,9 +57,8 @@ struct DisplayScreenView: View {
                     .background(Color.blue)
                     .cornerRadius(16)
                     .sheet(isPresented: $showingAlert) {
-                                
                     } content: {
-                        ImagePicker(image: $image)
+                        ImagePicker(image: $deskImage)
                     }
                 }
             }
@@ -68,7 +67,9 @@ struct DisplayScreenView: View {
 }
 
 struct DisplayScreenView_Previews: PreviewProvider {
+    @State static var deskImage: UIImage? = UIImage()
+    
     static var previews: some View {
-        DisplayScreenView()
+        DisplayScreenView(deskImage: $deskImage)
     }
 }

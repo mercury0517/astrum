@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct MyDeskView: View {
+    @State var deskImage: UIImage?
+    
+    init() {
+        deskImage = getDeskImageFromCache()
+    }
+    
     var body: some View {
         ZStack{
             LinearGradient(
@@ -17,11 +23,38 @@ struct MyDeskView: View {
             )
                 .ignoresSafeArea()
             ScrollView(showsIndicators: false) {
-                DisplayView()
-                    .padding(.top, 16)
-                Spacer()
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button(action: { resetDeskImage() }) {
+                            Image(systemName: "ellipsis.circle")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                        }
+                            .padding(5)
+                            .accentColor(Color.white)
+                            .background(Color.clear)
+                            .cornerRadius(25)
+                    }
+                    DisplayView(deskImage: $deskImage)
+                        .padding(.top, 16)
+                    Spacer()
+                }
             }
         }
+    }
+    
+    private func getDeskImageFromCache() -> UIImage? {
+        var image: UIImage?
+        if let imageData = UserDefaults.standard.data(forKey: "deskImage") {
+            image = UIImage(data: imageData)
+        }
+        return image
+    }
+    
+    private func resetDeskImage() {
+        UserDefaults.standard.removeObject(forKey: "deskImage")
+        deskImage = nil
     }
 }
 

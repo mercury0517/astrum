@@ -16,8 +16,6 @@ struct DisplayFrameView: View {
             center: .center,
             angle: .degrees(45)
         )
-            .border(width: 0.5, edges: [.top, .leading], color: .white)
-            .border(width: 0.5, edges: [.trailing, .bottom], color: .grayDark)
             .frame(width: itemWidth, height: 250)
             .foregroundColor(.black)
             .cornerRadius(15)
