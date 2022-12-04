@@ -25,19 +25,32 @@ struct MyDeskView: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     HStack {
+                        Text("My Desk")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .padding(.leading, 16)
+                            .fontWeight(.bold)
                         Spacer()
-                        Button(action: { resetDeskImage() }) {
-                            Image(systemName: "ellipsis.circle")
-                                .resizable()
-                                .frame(width: 25, height: 25)
+                        Menu {
+                            Button(
+                                "Delate your desk image",
+                                role: .destructive,
+                                action: { resetDeskImage() }
+                            )
+                            Button("Cancel", action: {})
+                        } label: {
+                                Image(systemName: "ellipsis.circle")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                    .padding(5)
+                                    .accentColor(Color.white)
+                                    .background(Color.clear)
+                                    .cornerRadius(25)
                         }
-                            .padding(5)
-                            .accentColor(Color.white)
-                            .background(Color.clear)
-                            .cornerRadius(25)
+                        .padding(.trailing, 16)
                     }
                     DisplayView(deskImage: $deskImage)
-                        .padding(.top, 16)
+                        .padding(.top, 8)
                     Spacer()
                 }
             }
@@ -55,6 +68,7 @@ struct MyDeskView: View {
     private func resetDeskImage() {
         UserDefaults.standard.removeObject(forKey: "deskImage")
         deskImage = nil
+        HapticFeedbackManager.shared.play(.notification(.success))
     }
 }
 
