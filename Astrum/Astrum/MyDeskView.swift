@@ -18,8 +18,8 @@ struct MyDeskView: View {
         ZStack{
             LinearGradient(
                 gradient: Gradient(colors: [.matteBlack, .black]),
-                startPoint: .leading,
-                endPoint: .trailing
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
             )
                 .ignoresSafeArea()
             ScrollView(showsIndicators: false) {
@@ -39,18 +39,21 @@ struct MyDeskView: View {
                             )
                             Button("Cancel", action: {})
                         } label: {
-                                Image(systemName: "ellipsis.circle")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .padding(8)
-                                    .accentColor(Color.white)
-                                    .background(Color.clear)
-                                    .cornerRadius(30)
+                            Image(systemName: "ellipsis")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 25)
+                                .padding(5)
+                                .accentColor(Color.white)
+                                .background(Color.blue)
+                                .cornerRadius(25)
                         }
                         .padding(.trailing, 16)
                     }
                         .padding(.top, 16)
                     DisplayView(deskImage: $deskImage)
+                    ItemsView()
+                        .padding(.top, 24)
                     Spacer()
                 }
             }

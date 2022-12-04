@@ -42,6 +42,8 @@ struct DisplayScreenView: View {
                     Text("Let's start with setting up your desk.")
                         .foregroundColor(.green)
                         .font(.title)
+                        .padding(.leading, 10)
+                        .padding(.trailing, 10)
                     Button(action: {
                         showingAlert = true
                     }) {
