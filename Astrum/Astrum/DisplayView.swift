@@ -18,13 +18,13 @@ struct DisplayView: View {
                 DisplayScreenView(deskImage: $deskImage)
             }
             DisplayStandView() // ディスプレイの土台部分
-                .padding(.top, -9)
+                .padding(.top, -8)
         }
     }
 }
 
 struct MyDisplayView_Previews: PreviewProvider {
-    @State static var deskImage: UIImage? = UIImage()
+    @State static var deskImage: UIImage? = nil
     
     static var previews: some View {
         DisplayView(deskImage: $deskImage)

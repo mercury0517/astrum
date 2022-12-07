@@ -22,8 +22,7 @@ struct DisplayScreenView: View {
                 Image(uiImage: unwrappedImage)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: itemWidth - 20, height: 230)
-                    .cornerRadius(15)
+                    .frame(width: itemWidth - 30, height: 220)
                     .padding(10)
             }
         } else {
@@ -32,22 +31,32 @@ struct DisplayScreenView: View {
                     .fill(
                         LinearGradient(
                             gradient: Gradient(colors: [.matteBlack, .black]),
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
+                            startPoint: .top,
+                            endPoint: .bottom
                         )
                     )
                     .padding(5)
                     .frame(width: itemWidth, height: 250)
+                Rectangle()
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: [.blueDark, .blueLight]),
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    .padding(5)
+                    .frame(width: itemWidth - 20, height: 230)
                 VStack {
                     Text("Let's start with setting up your desk.")
-                        .foregroundColor(.green)
+                        .foregroundColor(.white)
                         .font(.title)
                         .padding(.leading, 10)
                         .padding(.trailing, 10)
                     Button(action: {
                         showingAlert = true
                     }) {
-                        Text("Add your desk")
+                        Text("Add the desk")
                     }
                     .padding(EdgeInsets(
                         top: 5,
@@ -69,7 +78,7 @@ struct DisplayScreenView: View {
 }
 
 struct DisplayScreenView_Previews: PreviewProvider {
-    @State static var deskImage: UIImage? = UIImage()
+    @State static var deskImage: UIImage? = nil
     
     static var previews: some View {
         DisplayScreenView(deskImage: $deskImage)

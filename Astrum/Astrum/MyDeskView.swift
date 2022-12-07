@@ -33,11 +33,10 @@ struct MyDeskView: View {
                         Spacer()
                         Menu {
                             Button(
-                                "Delate your desk image",
+                                "Delete the desk image",
                                 role: .destructive,
                                 action: { resetDeskImage() }
                             )
-                            Button("Cancel", action: {})
                         } label: {
                             Image(systemName: "ellipsis")
                                 .resizable()
