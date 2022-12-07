@@ -18,18 +18,15 @@ struct MyDeskView: View {
         ZStack{
             LinearGradient(
                 gradient: Gradient(colors: [.matteBlack, .black]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
+                startPoint: .top,
+                endPoint: .bottom
             )
                 .ignoresSafeArea()
             ScrollView(showsIndicators: false) {
                 VStack {
                     HStack {
                         Text("My Desk")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                            .padding(.leading, 16)
-                            .fontWeight(.bold)
+                            .modifier(SectionTitle())
                         Spacer()
                         Menu {
                             Button(
@@ -39,15 +36,9 @@ struct MyDeskView: View {
                             )
                         } label: {
                             Image(systemName: "ellipsis")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                                .padding(5)
-                                .accentColor(Color.white)
-                                .background(Color.blue)
-                                .cornerRadius(20)
+                                .roundButton()
                         }
-                        .padding(.trailing, 16)
+                            .padding(.trailing, 16)
                     }
                         .padding(.top, 16)
                     DisplayView(deskImage: $deskImage)

@@ -11,10 +11,7 @@ struct ItemsView: View {
     var body: some View {
         HStack {
             Text("Items")
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .padding(.leading, 16)
-                .fontWeight(.bold)
+                .modifier(SectionTitle())
             Spacer()
             Menu {
                 Button(
@@ -24,13 +21,7 @@ struct ItemsView: View {
                 )
             } label: {
                 Image(systemName: "plus")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 20)
-                    .padding(5)
-                    .accentColor(Color.white)
-                    .background(Color.blue)
-                    .cornerRadius(20)
+                    .roundButton()
             }
             .padding(.trailing, 16)
         }

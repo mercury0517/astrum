@@ -66,7 +66,7 @@ struct DisplayScreenView: View {
                         trailing: 8
                     ))
                     .accentColor(Color.white)
-                    .background(Color.orange)
+                    .background(Color.matteBlack)
                     .cornerRadius(16)
                     .sheet(isPresented: $showingAlert) {
                     } content: {

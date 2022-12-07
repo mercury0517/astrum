@@ -23,6 +23,8 @@
 		C314C964293C77040053868E /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C963293C77040053868E /* HapticFeedbackManager.swift */; };
 		C314C968293CB3D80053868E /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C967293CB3D80053868E /* ItemsView.swift */; };
 		C314C96A293CB4700053868E /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C969293CB4700053868E /* ItemDetailView.swift */; };
+		C32BA68D2940C8F000E7D0D4 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA68C2940C8F000E7D0D4 /* SectionTitle.swift */; };
+		C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		C314C963293C77040053868E /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		C314C967293CB3D80053868E /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
 		C314C969293CB4700053868E /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		C32BA68C2940C8F000E7D0D4 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
+		C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,13 +82,12 @@
 				603AEC8B2903FDCC008B396D /* Assets.xcassets */,
 				603AEC872903FDCC008B396D /* AstrumApp.swift */,
 				603AEC892903FDCC008B396D /* ContentView.swift */,
-				C314C95D293B7DFA0053868E /* DisplayFrameView.swift */,
-				C314C95B293B7D360053868E /* DisplayScreenView.swift */,
-				C314C95F293B7E450053868E /* DisplayStandView.swift */,
-				604441F1293B46A20075E5CD /* DisplayView.swift */,
+				C32BA68A2940C7BE00E7D0D4 /* DisplayView */,
+				C32BA6902940CA3200E7D0D4 /* Extension */,
 				603AEC952903FE3B008B396D /* GlassCardView.swift */,
 				C314C969293CB4700053868E /* ItemDetailView.swift */,
 				C314C967293CB3D80053868E /* ItemsView.swift */,
+				C32BA68B2940C8CF00E7D0D4 /* Modifier */,
 				60235CEC292CF22E0086CC3D /* MyDeskView.swift */,
 				603AEC8D2903FDCC008B396D /* Preview Content */,
 				603AEC972904218C008B396D /* Utility */,
@@ -106,9 +109,36 @@
 				603AEC9A29042709008B396D /* ColorExtension.swift */,
 				C314C963293C77040053868E /* HapticFeedbackManager.swift */,
 				C314C961293B830E0053868E /* ImagePicker.swift */,
-				603AEC9C29042DEF008B396D /* ViewExtension.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		C32BA68A2940C7BE00E7D0D4 /* DisplayView */ = {
+			isa = PBXGroup;
+			children = (
+				C314C95D293B7DFA0053868E /* DisplayFrameView.swift */,
+				C314C95B293B7D360053868E /* DisplayScreenView.swift */,
+				C314C95F293B7E450053868E /* DisplayStandView.swift */,
+				604441F1293B46A20075E5CD /* DisplayView.swift */,
+			);
+			path = DisplayView;
+			sourceTree = "<group>";
+		};
+		C32BA68B2940C8CF00E7D0D4 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				C32BA68C2940C8F000E7D0D4 /* SectionTitle.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		C32BA6902940CA3200E7D0D4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */,
+				603AEC9C29042DEF008B396D /* ViewExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +216,7 @@
 				C314C96A293CB4700053868E /* ItemDetailView.swift in Sources */,
 				603AEC882903FDCC008B396D /* AstrumApp.swift in Sources */,
 				C314C964293C77040053868E /* HapticFeedbackManager.swift in Sources */,
+				C32BA68D2940C8F000E7D0D4 /* SectionTitle.swift in Sources */,
 				603AEC962903FE3B008B396D /* GlassCardView.swift in Sources */,
 				C314C95C293B7D360053868E /* DisplayScreenView.swift in Sources */,
 				C314C968293CB3D80053868E /* ItemsView.swift in Sources */,
@@ -195,6 +226,7 @@
 				604441F2293B46A20075E5CD /* DisplayView.swift in Sources */,
 				603AEC9D29042DEF008B396D /* ViewExtension.swift in Sources */,
 				60235CED292CF22E0086CC3D /* MyDeskView.swift in Sources */,
+				C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
