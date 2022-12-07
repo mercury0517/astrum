@@ -9,15 +9,27 @@ import SwiftUI
 
 struct DisplayStandView: View {
     var body: some View {
-        Rectangle()
-            .fill(
-                LinearGradient(
-                    gradient: Gradient(colors: [.gray, .grayLight]),
-                    startPoint: .top,
-                    endPoint: .bottom
+        VStack {
+            Rectangle()
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [.gray, .grayLight]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
                 )
-            )
-            .frame(width: 120, height: 50)
+                .frame(width: 120, height: 50)
+            Rectangle()
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [.grayLight, .gray]),
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .frame(width: 150, height: 8)
+                .padding(.top, -8)
+        }
     }
 }
 
