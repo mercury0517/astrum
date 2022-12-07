@@ -22,7 +22,7 @@ struct DisplayScreenView: View {
                 Image(uiImage: unwrappedImage)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: itemWidth - 30, height: 220)
+                    .frame(width: itemWidth - 20, height: 230)
                     .cornerRadius(15)
                     .padding(10)
             }
