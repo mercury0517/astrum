@@ -23,6 +23,7 @@ struct DisplayScreenView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: itemWidth - 30, height: 220)
+                    .cornerRadius(15)
                     .padding(10)
             }
         } else {
