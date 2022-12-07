@@ -18,20 +18,19 @@ struct ItemsView: View {
             Spacer()
             Menu {
                 Button(
-                    "Delate your desk image",
+                    "Delete the desk image",
                     role: .destructive,
                     action: {}
                 )
-                Button("Cancel", action: {})
             } label: {
                 Image(systemName: "plus")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 25, height: 25)
+                    .frame(width: 20, height: 20)
                     .padding(5)
                     .accentColor(Color.white)
                     .background(Color.blue)
-                    .cornerRadius(25)
+                    .cornerRadius(20)
             }
             .padding(.trailing, 16)
         }
