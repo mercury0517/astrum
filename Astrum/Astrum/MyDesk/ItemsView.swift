@@ -12,7 +12,9 @@ struct ItemsView: View {
         HStack {
             Text("Items")
                 .modifier(SectionTitle())
+            
             Spacer()
+            
             Menu {
                 Button(
                     "Delete the desk image",

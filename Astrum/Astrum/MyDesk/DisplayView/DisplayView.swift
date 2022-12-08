@@ -15,6 +15,7 @@ struct DisplayView: View {
         VStack(spacing: 0) {
             ZStack { // ディスプレイのモニター部分
                 DisplayFrameView()
+                
                 DisplayScreenView(deskImage: $deskImage)
             }
 

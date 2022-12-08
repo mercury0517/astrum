@@ -19,6 +19,7 @@ struct DisplayStandView: View {
                     )
                 )
                 .frame(width: 120, height: 50)
+            
             Rectangle()
                 .fill(
                     LinearGradient(

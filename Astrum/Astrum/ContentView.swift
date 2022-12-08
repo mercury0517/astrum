@@ -35,28 +35,31 @@ struct ContentView: View {
                         Image(systemName: "desktopcomputer")
                         Text("My Desk")
                     }
-            }.tag(1)
+                }.tag(1)
+            
             MyDeskView()
                 .tabItem {
                     VStack {
                         Image(systemName: "bold")
                         Text("TabB")
                     }
-            }.tag(2)
+                }.tag(2)
+            
             MyDeskView()
                 .tabItem {
                     VStack {
                         Image(systemName: "bold")
                         Text("TabC")
                     }
-            }.tag(3)
+                }.tag(3)
+            
             MyDeskView()
                 .tabItem {
                     VStack {
                         Image(systemName: "bold")
                         Text("TabD")
                     }
-            }.tag(4)
+                }.tag(4)
         }
         .accentColor(.white)
     }

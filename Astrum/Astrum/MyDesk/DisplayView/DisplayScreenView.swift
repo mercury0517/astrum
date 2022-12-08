@@ -19,6 +19,7 @@ struct DisplayScreenView: View {
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(.black)
                     .frame(width: itemWidth - 10, height: 240)
+                
                 Image(uiImage: unwrappedImage)
                     .resizable()
                     .scaledToFill()
@@ -38,6 +39,7 @@ struct DisplayScreenView: View {
                     )
                     .padding(5)
                     .frame(width: itemWidth, height: 250)
+                
                 Rectangle()
                     .fill(
                         LinearGradient(
@@ -48,12 +50,14 @@ struct DisplayScreenView: View {
                     )
                     .padding(5)
                     .frame(width: itemWidth - 20, height: 230)
+                
                 VStack {
                     Text("Let's start with setting up your desk.")
                         .foregroundColor(.white)
                         .font(.title)
                         .padding(.leading, 10)
                         .padding(.trailing, 10)
+                    
                     Button(action: {
                         showingAlert = true
                     }) {

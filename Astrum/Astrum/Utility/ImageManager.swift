@@ -37,7 +37,6 @@ class ImageManager {
         
         do {
             try fileManager.removeItem(at: fileUrl)
-            print("成功した")
         } catch let error {
             print("失敗した\(error)")
         }

@@ -24,7 +24,9 @@ struct MyDeskView: View {
                     HStack {
                         Text("My Desk")
                             .modifier(SectionTitle())
+                        
                         Spacer()
+                        
                         Menu {
                             Button(
                                 "Delete the desk image",
@@ -35,12 +37,15 @@ struct MyDeskView: View {
                             Image(systemName: "ellipsis")
                                 .roundButton()
                         }
-                            .padding(.trailing, 16)
+                        .padding(.trailing, 16)
                     }
-                        .padding(.top, 16)
+                    .padding(.top, 16)
+                    
                     DisplayView(deskImage: $deskImage)
+                    
                     ItemsView()
                         .padding(.top, 24)
+                    
                     Spacer()
                 }
             }
