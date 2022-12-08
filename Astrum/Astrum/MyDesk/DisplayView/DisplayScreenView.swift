@@ -19,13 +19,11 @@ struct DisplayScreenView: View {
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(.black)
                     .frame(width: itemWidth - 10, height: 240)
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: itemWidth - 30, height: 220)
                 Image(uiImage: unwrappedImage)
                     .resizable()
                     .scaledToFill()
                     .frame(width: itemWidth - 30, height: 220)
+                    .cornerRadius(0) // scaledToFillが効かなくなるのを回避する為
                     .padding(10)
             }
         } else {
