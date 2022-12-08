@@ -21,8 +21,9 @@ struct MyDeskView: View {
                 startPoint: .top,
                 endPoint: .bottom
             )
-                .ignoresSafeArea()
-            ScrollView(showsIndicators: false) {
+            .ignoresSafeArea()
+            
+            ScrollView(showsIndicators: true) {
                 VStack {
                     HStack {
                         Text("My Desk")

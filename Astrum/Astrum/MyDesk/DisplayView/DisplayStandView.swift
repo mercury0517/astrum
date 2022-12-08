@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DisplayStandView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Rectangle()
                 .fill(
                     LinearGradient(
@@ -28,7 +28,6 @@ struct DisplayStandView: View {
                     )
                 )
                 .frame(width: 150, height: 8)
-                .padding(.top, -8)
         }
     }
 }

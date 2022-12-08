@@ -12,13 +12,13 @@ struct DisplayView: View {
     @Binding var deskImage: UIImage?
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack { // ディスプレイのモニター部分
                 DisplayFrameView()
                 DisplayScreenView(deskImage: $deskImage)
             }
+
             DisplayStandView() // ディスプレイの土台部分
-                .padding(.top, -8)
         }
     }
 }
