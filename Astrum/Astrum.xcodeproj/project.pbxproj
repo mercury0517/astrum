@@ -25,6 +25,7 @@
 		C314C96A293CB4700053868E /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C969293CB4700053868E /* ItemDetailView.swift */; };
 		C32BA68D2940C8F000E7D0D4 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA68C2940C8F000E7D0D4 /* SectionTitle.swift */; };
 		C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */; };
+		C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69429421F4F00E7D0D4 /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		C314C969293CB4700053868E /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		C32BA68C2940C8F000E7D0D4 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		C32BA69429421F4F00E7D0D4 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				C32BA6902940CA3200E7D0D4 /* Extension */,
 				C314C963293C77040053868E /* HapticFeedbackManager.swift */,
+				C32BA69429421F4F00E7D0D4 /* ImageManager.swift */,
 				C314C961293B830E0053868E /* ImagePicker.swift */,
 				C32BA68B2940C8CF00E7D0D4 /* Modifier */,
 			);
@@ -227,6 +230,7 @@
 				C32BA68D2940C8F000E7D0D4 /* SectionTitle.swift in Sources */,
 				603AEC962903FE3B008B396D /* GlassCardView.swift in Sources */,
 				C314C95C293B7D360053868E /* DisplayScreenView.swift in Sources */,
+				C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */,
 				C314C968293CB3D80053868E /* ItemsView.swift in Sources */,
 				603AEC9B29042709008B396D /* ColorExtension.swift in Sources */,
 				C314C960293B7E450053868E /* DisplayStandView.swift in Sources */,

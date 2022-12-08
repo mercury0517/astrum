@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct MyDeskView: View {
-    @State var deskImage: UIImage?
-    
-    init() {
-        deskImage = getDeskImageFromCache()
-    }
+    @State var deskImage: UIImage? = ImageManager.shared.getImage(name: "deskImage")
     
     var body: some View {
         ZStack{
@@ -51,16 +47,8 @@ struct MyDeskView: View {
         }
     }
     
-    private func getDeskImageFromCache() -> UIImage? {
-        var image: UIImage?
-        if let imageData = UserDefaults.standard.data(forKey: "deskImage") {
-            image = UIImage(data: imageData)
-        }
-        return image
-    }
-    
     private func resetDeskImage() {
-        UserDefaults.standard.removeObject(forKey: "deskImage")
+        ImageManager.shared.deleteImage(name: "deskImage")
         deskImage = nil
         HapticFeedbackManager.shared.play(.notification(.success))
     }

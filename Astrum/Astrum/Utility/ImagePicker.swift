@@ -44,9 +44,9 @@ struct ImagePicker: UIViewControllerRepresentable {
                     }
                     DispatchQueue.main.sync {
                         self?.parent.image = image
-                        UserDefaults.standard.set(image.pngData(), forKey: "deskImage")
-                        HapticFeedbackManager.shared.play(.notification(.success))
                     }
+                    ImageManager.shared.writeImage(name: "deskImage", uiImage: image)
+                    HapticFeedbackManager.shared.play(.notification(.success))
                 }
             }
         }
