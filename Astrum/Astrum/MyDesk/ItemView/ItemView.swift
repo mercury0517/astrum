@@ -30,14 +30,15 @@ struct ItemView: View {
             }
             .padding(.bottom, 16)
 
-            ItemLabel()
-            ItemLabel()
-            ItemLabel()
-            ItemLabel()
-            ItemLabel()
-            ItemLabel()
-            
-            Spacer()
+            VStack(spacing: 0) {
+                ItemLabel()
+                ItemLabel()
+                ItemLabel()
+                ItemLabel()
+                ItemLabel()
+                ItemLabel()
+            }
+            .padding(.bottom, 48)
         }
     }
 }

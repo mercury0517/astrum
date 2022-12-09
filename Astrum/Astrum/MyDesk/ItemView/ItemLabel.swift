@@ -9,28 +9,33 @@ import SwiftUI
 
 struct ItemLabel: View {
     var body: some View {
-        Label(
-            title: {
+        HStack(spacing: 0) {
+            Image("sampleItem")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 80, height: 80)
+                .background(Color.white)
+                .cornerRadius(10)
+                
+            HStack(spacing: 0) {
                 Text("Apple Studio Display")
                     .font(Font.system(size: 16))
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
-                    .frame(
-                        width: UIScreen.main.bounds.width - 100,
-                        height: 100
-                    )
-            },
-            icon: {
-                Image("sampleItem")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .background(Color.white)
+                    .padding(.leading, 16)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+                    .foregroundColor(Color.gray)
             }
-        )
-        .background(Color.matteBlack)
-        .frame(width: UIScreen.main.bounds.width, height: 100)
-        .border(.gray, width: 1)
+            .frame(
+                width: UIScreen.main.bounds.width - 112,
+                height: 100
+            )
+        }
+        .frame(width: UIScreen.main.bounds.width - 32, height: 100)
+        .border(width: 0.25, edges: [.bottom], color: Color.gray)
     }
 }
 
