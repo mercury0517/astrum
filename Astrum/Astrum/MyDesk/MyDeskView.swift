@@ -14,7 +14,7 @@ struct MyDeskView: View {
         NavigationView {
             ZStack{
                 LinearGradient(
-                    gradient: Gradient(colors: [.matteBlack, .black]),
+                    gradient: Gradient(colors: [.matteBlack, .black, .matteBlack]),
                     startPoint: .top,
                     endPoint: .bottom
                 )
@@ -44,7 +44,7 @@ struct MyDeskView: View {
                         
                         DisplayView(deskImage: $deskImage)
                         
-                        ItemsView()
+                        ItemView()
                             .padding(.top, 24)
                         
                         Spacer()

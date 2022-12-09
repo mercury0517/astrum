@@ -21,11 +21,12 @@
 		C314C960293B7E450053868E /* DisplayStandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C95F293B7E450053868E /* DisplayStandView.swift */; };
 		C314C962293B830E0053868E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C961293B830E0053868E /* ImagePicker.swift */; };
 		C314C964293C77040053868E /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C963293C77040053868E /* HapticFeedbackManager.swift */; };
-		C314C968293CB3D80053868E /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C967293CB3D80053868E /* ItemsView.swift */; };
+		C314C968293CB3D80053868E /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C967293CB3D80053868E /* ItemView.swift */; };
 		C314C96A293CB4700053868E /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314C969293CB4700053868E /* ItemDetailView.swift */; };
 		C32BA68D2940C8F000E7D0D4 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA68C2940C8F000E7D0D4 /* SectionTitle.swift */; };
 		C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */; };
 		C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69429421F4F00E7D0D4 /* ImageManager.swift */; };
+		C32BA69829435B4D00E7D0D4 /* ItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,11 +45,12 @@
 		C314C95F293B7E450053868E /* DisplayStandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayStandView.swift; sourceTree = "<group>"; };
 		C314C961293B830E0053868E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C314C963293C77040053868E /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
-		C314C967293CB3D80053868E /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		C314C967293CB3D80053868E /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		C314C969293CB4700053868E /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		C32BA68C2940C8F000E7D0D4 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		C32BA69429421F4F00E7D0D4 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,12 +146,21 @@
 		C32BA6932942034700E7D0D4 /* MyDesk */ = {
 			isa = PBXGroup;
 			children = (
+				C32BA6962943565D00E7D0D4 /* ItemView */,
 				C32BA68A2940C7BE00E7D0D4 /* DisplayView */,
-				C314C969293CB4700053868E /* ItemDetailView.swift */,
-				C314C967293CB3D80053868E /* ItemsView.swift */,
 				60235CEC292CF22E0086CC3D /* MyDeskView.swift */,
 			);
 			path = MyDesk;
+			sourceTree = "<group>";
+		};
+		C32BA6962943565D00E7D0D4 /* ItemView */ = {
+			isa = PBXGroup;
+			children = (
+				C314C969293CB4700053868E /* ItemDetailView.swift */,
+				C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */,
+				C314C967293CB3D80053868E /* ItemView.swift */,
+			);
+			path = ItemView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,12 +242,13 @@
 				603AEC962903FE3B008B396D /* GlassCardView.swift in Sources */,
 				C314C95C293B7D360053868E /* DisplayScreenView.swift in Sources */,
 				C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */,
-				C314C968293CB3D80053868E /* ItemsView.swift in Sources */,
+				C314C968293CB3D80053868E /* ItemView.swift in Sources */,
 				603AEC9B29042709008B396D /* ColorExtension.swift in Sources */,
 				C314C960293B7E450053868E /* DisplayStandView.swift in Sources */,
 				C314C962293B830E0053868E /* ImagePicker.swift in Sources */,
 				604441F2293B46A20075E5CD /* DisplayView.swift in Sources */,
 				603AEC9D29042DEF008B396D /* ViewExtension.swift in Sources */,
+				C32BA69829435B4D00E7D0D4 /* ItemLabel.swift in Sources */,
 				60235CED292CF22E0086CC3D /* MyDeskView.swift in Sources */,
 				C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */,
 			);
