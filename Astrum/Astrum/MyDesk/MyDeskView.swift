@@ -11,7 +11,7 @@ struct MyDeskView: View {
     @State var deskImage: UIImage? = ImageManager.shared.getImage(name: "deskImage")
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack{
                 LinearGradient(
                     gradient: Gradient(colors: [.matteBlack, .black, .matteBlack]),

@@ -11,7 +11,7 @@ struct ContentView: View {
     init() {
         let image = UIImage.gradientImageWithBounds(
             bounds: CGRect(
-                x: 0, y: 0, width: UIScreen.main.scale, height: 10
+                x: 0, y: 0, width: UIScreen.main.scale, height: 5
             ),
             colors: [
                 UIColor(227, 215, 163).withAlphaComponent(0.1).cgColor,

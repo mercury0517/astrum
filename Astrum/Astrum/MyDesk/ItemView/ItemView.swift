@@ -31,12 +31,36 @@ struct ItemView: View {
             .padding(.bottom, 16)
 
             VStack(spacing: 0) {
-                ItemLabel()
-                ItemLabel()
-                ItemLabel()
-                ItemLabel()
-                ItemLabel()
-                ItemLabel()
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
             }
             .padding(.bottom, 48)
         }
