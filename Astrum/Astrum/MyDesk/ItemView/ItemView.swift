@@ -70,12 +70,7 @@ struct ItemView: View {
 struct ItemsView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            LinearGradient(
-                gradient: Gradient(colors: [.matteBlack, .black, .matteBlack]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea()
+            BackgroundView()
             
             ItemView()
         }

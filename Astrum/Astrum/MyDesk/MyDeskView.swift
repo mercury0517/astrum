@@ -13,12 +13,7 @@ struct MyDeskView: View {
     var body: some View {
         NavigationStack {
             ZStack{
-                LinearGradient(
-                    gradient: Gradient(colors: [.matteBlack, .black, .matteBlack]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea()
+                BackgroundView()
                 
                 ScrollView(showsIndicators: true) {
                     VStack {

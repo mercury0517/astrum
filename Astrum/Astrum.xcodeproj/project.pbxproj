@@ -27,6 +27,7 @@
 		C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */; };
 		C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69429421F4F00E7D0D4 /* ImageManager.swift */; };
 		C32BA69829435B4D00E7D0D4 /* ItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */; };
+		C32BA69B29449EAE00E7D0D4 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		C32BA69429421F4F00E7D0D4 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLabel.swift; sourceTree = "<group>"; };
+		C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		603AEC972904218C008B396D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				C32BA69929449E8300E7D0D4 /* CommonView */,
 				C32BA6902940CA3200E7D0D4 /* Extension */,
 				C314C963293C77040053868E /* HapticFeedbackManager.swift */,
 				C32BA69429421F4F00E7D0D4 /* ImageManager.swift */,
@@ -161,6 +164,14 @@
 				C314C967293CB3D80053868E /* ItemView.swift */,
 			);
 			path = ItemView;
+			sourceTree = "<group>";
+		};
+		C32BA69929449E8300E7D0D4 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */,
+			);
+			path = CommonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +261,7 @@
 				603AEC9D29042DEF008B396D /* ViewExtension.swift in Sources */,
 				C32BA69829435B4D00E7D0D4 /* ItemLabel.swift in Sources */,
 				60235CED292CF22E0086CC3D /* MyDeskView.swift in Sources */,
+				C32BA69B29449EAE00E7D0D4 /* BackgroundView.swift in Sources */,
 				C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
