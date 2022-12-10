@@ -28,6 +28,7 @@
 		C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69429421F4F00E7D0D4 /* ImageManager.swift */; };
 		C32BA69829435B4D00E7D0D4 /* ItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */; };
 		C32BA69B29449EAE00E7D0D4 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */; };
+		C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		C32BA69429421F4F00E7D0D4 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLabel.swift; sourceTree = "<group>"; };
 		C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			children = (
 				C314C969293CB4700053868E /* ItemDetailView.swift */,
 				C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */,
+				C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */,
 				C314C967293CB3D80053868E /* ItemView.swift */,
 			);
 			path = ItemView;
@@ -254,6 +257,7 @@
 				C314C95C293B7D360053868E /* DisplayScreenView.swift in Sources */,
 				C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */,
 				C314C968293CB3D80053868E /* ItemView.swift in Sources */,
+				C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */,
 				603AEC9B29042709008B396D /* ColorExtension.swift in Sources */,
 				C314C960293B7E450053868E /* DisplayStandView.swift in Sources */,
 				C314C962293B830E0053868E /* ImagePicker.swift in Sources */,

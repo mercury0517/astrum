@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct ItemView: View {
+    @State private var isNextPresented = false
+
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
-                Text("Items")
+                Text("My Items")
                     .modifier(SectionTitle())
                 
                 Spacer()
                 
-                Menu {
-                    Button(
-                        "Delete the desk image",
-                        role: .destructive,
-                        action: {}
-                    )
-                } label: {
+                Button(action: {
+                    isNextPresented.toggle()
+                }) {
                     Image(systemName: "plus")
                         .roundButton()
+                }
+                .sheet(isPresented: $isNextPresented) {
+                    ItemRegistrationView()
                 }
                 .padding(.trailing, 16)
             }

@@ -45,21 +45,21 @@ struct ContentView: View {
                     }
                 }.tag(2)
             
-            MyDeskView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "bold")
-                        Text("TabC")
-                    }
-                }.tag(3)
-            
-            MyDeskView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "bold")
-                        Text("TabD")
-                    }
-                }.tag(4)
+//            MyDeskView()
+//                .tabItem {
+//                    VStack {
+//                        Image(systemName: "bold")
+//                        Text("TabC")
+//                    }
+//                }.tag(3)
+//            
+//            MyDeskView()
+//                .tabItem {
+//                    VStack {
+//                        Image(systemName: "bold")
+//                        Text("TabD")
+//                    }
+//                }.tag(4)
         }
         .accentColor(.white)
     }

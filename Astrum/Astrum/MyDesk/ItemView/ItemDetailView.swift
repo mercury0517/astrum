@@ -33,6 +33,17 @@ struct ItemDetailView: View {
                         .padding(.leading, 16)
                         .padding(.trailing, 16)
                     
+                    if let url = URL(string: "https://www.apple.com/") {
+                        HStack {
+                            Link(url.absoluteString, destination: url)
+                                .foregroundColor(.blue)
+                                .padding(.leading, 16)
+                                .padding(.trailing, 16)
+                            
+                            Spacer()
+                        }
+                    }
+                    
                     Spacer()
                 }
             }
