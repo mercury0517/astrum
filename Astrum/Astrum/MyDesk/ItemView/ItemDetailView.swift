@@ -44,6 +44,15 @@ struct ItemDetailView: View {
                         }
                     }
                     
+                    HStack {
+                        Text("Date of purchase: 2022/12/11")
+                            .foregroundColor(.white)
+                            .padding(.leading, 16)
+                            .padding(.trailing, 16)
+                        
+                        Spacer()
+                    }
+                    
                     Spacer()
                 }
             }

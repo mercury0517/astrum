@@ -12,21 +12,25 @@ struct ItemRegistrationView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Register New Item")
-                    .navigationTitle("Add new item")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbarColorScheme(.dark, for: .navigationBar)
-                    .toolbarBackground(.visible, for: .navigationBar)
+            ZStack {
+                BackgroundView()
                 
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "x.circle")
-                        .resizable()
-                        .frame(width: 50, height: 50)
+                VStack {
+                    Text("Register New Item")
+                        .navigationTitle("Add new item")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbarColorScheme(.dark, for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
+                    
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "x.circle")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    }
                 }
-            }
+            } 
         }
     }
 }
