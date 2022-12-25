@@ -16,20 +16,20 @@ struct DisplayScreenView: View {
     var body: some View {
         if let unwrappedImage = deskImage {
             ZStack {
-                RoundedRectangle(cornerRadius: 15)
+                Rectangle()
                     .foregroundColor(.black)
                     .frame(width: itemWidth - 10, height: 240)
                 
                 Image(uiImage: unwrappedImage)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: itemWidth - 30, height: 220)
+                    .frame(width: itemWidth - 20, height: 230)
                     .cornerRadius(0) // scaledToFillが効かなくなるのを回避する為
                     .padding(10)
             }
         } else {
             ZStack {
-                RoundedRectangle(cornerRadius: 15)
+                Rectangle()
                     .fill(
                         LinearGradient(
                             gradient: Gradient(colors: [.matteBlack, .black]),
@@ -49,7 +49,7 @@ struct DisplayScreenView: View {
                         )
                     )
                     .padding(5)
-                    .frame(width: itemWidth - 20, height: 230)
+                    .frame(width: itemWidth - 10, height: 240)
                 
                 VStack {
                     Text("Let's start with setting up your desk.")
@@ -61,7 +61,7 @@ struct DisplayScreenView: View {
                     Button(action: {
                         showingAlert = true
                     }) {
-                        Text("Add the desk")
+                        Text("Add your desk")
                     }
                     .padding(EdgeInsets(
                         top: 5,

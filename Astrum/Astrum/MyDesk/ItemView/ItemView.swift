@@ -21,7 +21,7 @@ struct ItemView: View {
                 Button(action: {
                     isNextPresented.toggle()
                 }) {
-                    Image(systemName: "plus")
+                    Image(systemName: "plus.circle")
                         .roundButton()
                 }
                 .sheet(isPresented: $isNextPresented) {

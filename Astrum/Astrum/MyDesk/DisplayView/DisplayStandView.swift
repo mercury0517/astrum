@@ -18,7 +18,7 @@ struct DisplayStandView: View {
                         endPoint: .bottom
                     )
                 )
-                .frame(width: 120, height: 50)
+                .frame(width: 80, height: 30)
             
             Rectangle()
                 .fill(
@@ -28,7 +28,7 @@ struct DisplayStandView: View {
                         endPoint: .trailing
                     )
                 )
-                .frame(width: 150, height: 8)
+                .frame(width: 160, height: 5)
         }
     }
 }

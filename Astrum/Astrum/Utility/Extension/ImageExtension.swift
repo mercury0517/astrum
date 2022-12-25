@@ -11,10 +11,8 @@ extension Image {
     func roundButton() -> some View {
         self.resizable()
             .scaledToFit()
-            .frame(width: 20, height: 20)
-            .padding(5)
-            .accentColor(Color.white)
-            .background(Color.blue)
-            .cornerRadius(20)
+            .frame(width: 25, height: 25)
+            .accentColor(Color.blue)
+            .background(Color.clear)
     }
 }
