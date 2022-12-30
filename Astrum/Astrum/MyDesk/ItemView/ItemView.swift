@@ -13,7 +13,7 @@ struct ItemView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
-                Text("My Items")
+                Text("Items")
                     .modifier(SectionTitle())
                 
                 Spacer()
@@ -26,6 +26,7 @@ struct ItemView: View {
                 }
                 .sheet(isPresented: $isNextPresented) {
                     ItemRegistrationView()
+                        .presentationDetents([.medium])
                 }
                 .padding(.trailing, 16)
             }

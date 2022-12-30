@@ -17,11 +17,7 @@ struct ItemRegistrationView: View {
                 
                 VStack {
                     Text("Register New Item")
-                        .navigationTitle("Add new item")
-                        .navigationBarTitleDisplayMode(.inline)
-                        .toolbarColorScheme(.dark, for: .navigationBar)
-                        .toolbarBackground(.visible, for: .navigationBar)
-                    
+                        .foregroundColor(.white)
                     Button {
                         dismiss()
                     } label: {

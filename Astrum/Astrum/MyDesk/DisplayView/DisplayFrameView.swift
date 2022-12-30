@@ -18,6 +18,7 @@ struct DisplayFrameView: View {
         )
         .frame(width: itemWidth, height: 250)
         .foregroundColor(.black)
+        .cornerRadius(8)
     }
 }
 
