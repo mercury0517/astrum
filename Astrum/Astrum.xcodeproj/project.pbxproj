@@ -30,6 +30,7 @@
 		C32BA69B29449EAE00E7D0D4 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */; };
 		C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */; };
 		C32BA6A029458A0400E7D0D4 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69F29458A0400E7D0D4 /* FavoritesView.swift */; };
+		C3504CE22960117000201DF7 /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CE12960117000201DF7 /* ItemCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRegistrationView.swift; sourceTree = "<group>"; };
 		C32BA69F29458A0400E7D0D4 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		C3504CE12960117000201DF7 /* ItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 		C32BA6962943565D00E7D0D4 /* ItemView */ = {
 			isa = PBXGroup;
 			children = (
+				C3504CE12960117000201DF7 /* ItemCellView.swift */,
 				C314C969293CB4700053868E /* ItemDetailView.swift */,
 				C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */,
 				C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */,
@@ -261,6 +264,7 @@
 				C314C95E293B7DFA0053868E /* DisplayFrameView.swift in Sources */,
 				603AEC8A2903FDCC008B396D /* ContentView.swift in Sources */,
 				C314C96A293CB4700053868E /* ItemDetailView.swift in Sources */,
+				C3504CE22960117000201DF7 /* ItemCellView.swift in Sources */,
 				603AEC882903FDCC008B396D /* AstrumApp.swift in Sources */,
 				C314C964293C77040053868E /* HapticFeedbackManager.swift in Sources */,
 				C32BA68D2940C8F000E7D0D4 /* SectionTitle.swift in Sources */,

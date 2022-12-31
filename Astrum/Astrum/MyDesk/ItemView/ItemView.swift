@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ItemView: View {
     @State private var isNextPresented = false
+    private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
 
     var body: some View {
         VStack(spacing: 0) {
@@ -26,45 +27,16 @@ struct ItemView: View {
                 }
                 .sheet(isPresented: $isNextPresented) {
                     ItemRegistrationView()
-                        .presentationDetents([.medium])
                 }
                 .padding(.trailing, 16)
             }
-            .padding(.bottom, 16)
 
-            VStack(spacing: 0) {
-                NavigationLink {
-                    ItemDetailView()
-                } label: {
-                    ItemLabel()
-                }
-                NavigationLink {
-                    ItemDetailView()
-                } label: {
-                    ItemLabel()
-                }
-                NavigationLink {
-                    ItemDetailView()
-                } label: {
-                    ItemLabel()
-                }
-                NavigationLink {
-                    ItemDetailView()
-                } label: {
-                    ItemLabel()
-                }
-                NavigationLink {
-                    ItemDetailView()
-                } label: {
-                    ItemLabel()
-                }
-                NavigationLink {
-                    ItemDetailView()
-                } label: {
-                    ItemLabel()
+            LazyVGrid(columns: columns, spacing: 16) { // カラム数の指定
+                ForEach((1...20), id: \.self) { _ in
+                    ItemCellView()
                 }
             }
-            .padding(.bottom, 48)
+            .padding(16)
         }
     }
 }
