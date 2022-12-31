@@ -10,6 +10,16 @@ import SwiftUI
 struct MyDeskView: View {
     @State var deskImage: UIImage? = ImageManager.shared.getImage(name: "deskImage")
     
+    init(deskImage: UIImage? = nil) {
+        self.deskImage = deskImage
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithDefaultBackground()
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+    }
+    
     var body: some View {
         NavigationStack {
             ZStack{
@@ -27,15 +37,13 @@ struct MyDeskView: View {
                     }
                 }
             }
-            .navigationTitle("My Desk")
+            .navigationTitle("Astrum")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Button(
-                            "Delete the desk image",
+                            "デスクの画像を削除",
                             role: .destructive,
                             action: { resetDeskImage() }
                         )

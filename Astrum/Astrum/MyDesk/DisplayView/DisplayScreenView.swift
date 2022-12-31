@@ -43,8 +43,8 @@ struct DisplayScreenView: View {
                 Rectangle()
                     .fill(
                         LinearGradient(
-                            gradient: Gradient(colors: [.blueDark, .blueLight]),
-                            startPoint: .top,
+                            gradient: Gradient(colors: [.yellow, .orange]),
+                            startPoint: .topLeading,
                             endPoint: .bottom
                         )
                     )
@@ -52,16 +52,17 @@ struct DisplayScreenView: View {
                     .frame(width: itemWidth - 10, height: 240)
                 
                 VStack {
-                    Text("Let's start with setting up your desk.")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .padding(.leading, 10)
-                        .padding(.trailing, 10)
+                    Text("デスクの写真を追加してみよう")
+                        .foregroundColor(.matteBlack)
+                        .font(.system(size: 20))
+                        .fontWeight(.semibold)
+                        .padding(.leading, 16)
+                        .padding(.trailing, 16)
                     
                     Button(action: {
                         showingAlert = true
                     }) {
-                        Text("Add your desk")
+                        Text("ライブラリから追加")
                     }
                     .padding(EdgeInsets(
                         top: 5,
@@ -70,7 +71,7 @@ struct DisplayScreenView: View {
                         trailing: 8
                     ))
                     .accentColor(Color.white)
-                    .background(Color.orange)
+                    .background(Color.blue)
                     .cornerRadius(16)
                     .sheet(isPresented: $showingAlert) {
                     } content: {

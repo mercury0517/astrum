@@ -27,7 +27,7 @@ struct FavoritesView: View {
                     }
                 }
             }
-            .navigationTitle("Favorites")
+            .navigationTitle("お気に入り")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)

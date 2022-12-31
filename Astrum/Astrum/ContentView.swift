@@ -33,7 +33,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "lamp.desk")
-                        Text("My Desk")
+                        Text("マイデスク")
                     }
                 }.tag(1)
             
@@ -41,7 +41,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "star")
-                        Text("Favorites")
+                        Text("お気に入り")
                     }
                 }.tag(2)
         }
