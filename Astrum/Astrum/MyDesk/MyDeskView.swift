@@ -63,7 +63,7 @@ struct MyDeskView: View {
                             action: { resetDeskImage() }
                         )
                     } label: {
-                        Image(systemName: "ellipsis")
+                        Image(systemName: "ellipsis.circle")
                             .roundButton()
                     }
                 }

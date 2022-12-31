@@ -32,7 +32,7 @@ struct ContentView: View {
             MyDeskView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "lamp.desk")
+                        Image(systemName: "desktopcomputer")
                         Text("マイデスク")
                     }
                 }.tag(1)
@@ -44,6 +44,14 @@ struct ContentView: View {
                         Text("お気に入り")
                     }
                 }.tag(2)
+            
+            FavoritesView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "gear")
+                        Text("設定")
+                    }
+                }.tag(3)
         }
         .accentColor(.blue)
     }

@@ -31,14 +31,44 @@ struct ItemView: View {
                 .padding(.trailing, 16)
             }
 
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach((1...12), id: \.self) { _ in
-                    ItemCellView()
+//            LazyVGrid(columns: columns, spacing: 16) {
+//                ForEach((1...12), id: \.self) { _ in
+//                    ItemCellView()
+//                }
+//            }
+//            .padding(16)
+//
+//            .padding(.bottom, 16)
+            
+            VStack(spacing: 0) {
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
+                }
+                NavigationLink {
+                    ItemDetailView()
+                } label: {
+                    ItemLabel()
                 }
             }
-            .padding(16)
-            
-            .padding(.bottom, 16)
+            .padding(.top, 8)
+            .padding(.bottom, 32)
         }
     }
 }

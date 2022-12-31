@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ItemLabel: View {
+    private let itemSize = (UIScreen.main.bounds.width - 80) / 4
+    
     var body: some View {
         HStack(spacing: 0) {
             Image("sampleItem")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 80, height: 80)
+                .frame(width: itemSize, height: itemSize)
                 .background(Color.white)
                 .cornerRadius(10)
                 
@@ -30,7 +32,7 @@ struct ItemLabel: View {
                     .foregroundColor(Color.gray)
             }
             .frame(
-                width: UIScreen.main.bounds.width - 112,
+                width: UIScreen.main.bounds.width - itemSize - 32,
                 height: 100
             )
         }
