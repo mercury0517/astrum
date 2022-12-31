@@ -36,10 +36,9 @@ struct MyDeskView: View {
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
-                            .frame(width: UIScreen.main.bounds.width, height: 350)
+                            .frame(width: UIScreen.main.bounds.width, height: 333)
                             
                             DisplayView(deskImage: $deskImage)
-                                .padding(.top, 16)
                         }
                         
                         
