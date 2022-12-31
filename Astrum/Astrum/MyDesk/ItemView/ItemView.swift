@@ -31,12 +31,14 @@ struct ItemView: View {
                 .padding(.trailing, 16)
             }
 
-            LazyVGrid(columns: columns, spacing: 16) { // カラム数の指定
-                ForEach((1...20), id: \.self) { _ in
+            LazyVGrid(columns: columns, spacing: 16) {
+                ForEach((1...12), id: \.self) { _ in
                     ItemCellView()
                 }
             }
             .padding(16)
+            
+            .padding(.bottom, 16)
         }
     }
 }

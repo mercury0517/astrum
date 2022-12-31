@@ -17,7 +17,10 @@ struct MyDeskView: View {
         navigationBarAppearance.configureWithDefaultBackground()
         
         navigationBarAppearance.backgroundColor = UIColor(40, 40, 43)
-        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationBarAppearance.titleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont(name: "ZenAntique-Regular", size: 24) ?? .systemFont(ofSize: 24)
+        ]
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance

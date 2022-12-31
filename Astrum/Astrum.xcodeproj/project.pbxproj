@@ -31,6 +31,8 @@
 		C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */; };
 		C32BA6A029458A0400E7D0D4 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69F29458A0400E7D0D4 /* FavoritesView.swift */; };
 		C3504CE22960117000201DF7 /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CE12960117000201DF7 /* ItemCellView.swift */; };
+		C3504CE62960210A00201DF7 /* ZenAntique-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3504CE42960210A00201DF7 /* ZenAntique-Regular.ttf */; };
+		C3504CE72960210A00201DF7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C3504CE52960210A00201DF7 /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,9 @@
 		C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRegistrationView.swift; sourceTree = "<group>"; };
 		C32BA69F29458A0400E7D0D4 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		C3504CE12960117000201DF7 /* ItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellView.swift; sourceTree = "<group>"; };
+		C3504CE42960210A00201DF7 /* ZenAntique-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenAntique-Regular.ttf"; sourceTree = "<group>"; };
+		C3504CE52960210A00201DF7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		C3504CE92960217F00201DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 		603AEC862903FDCC008B396D /* Astrum */ = {
 			isa = PBXGroup;
 			children = (
+				C3504CE92960217F00201DF7 /* Info.plist */,
 				603AEC8B2903FDCC008B396D /* Assets.xcassets */,
 				603AEC872903FDCC008B396D /* AstrumApp.swift */,
 				603AEC892903FDCC008B396D /* ContentView.swift */,
@@ -98,6 +104,7 @@
 				603AEC952903FE3B008B396D /* GlassCardView.swift */,
 				C32BA6932942034700E7D0D4 /* MyDesk */,
 				603AEC8D2903FDCC008B396D /* Preview Content */,
+				C3504CE82960212100201DF7 /* Resouces */,
 				603AEC972904218C008B396D /* Utility */,
 			);
 			path = Astrum;
@@ -191,6 +198,23 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		C3504CE32960210A00201DF7 /* Zen_Antique */ = {
+			isa = PBXGroup;
+			children = (
+				C3504CE42960210A00201DF7 /* ZenAntique-Regular.ttf */,
+				C3504CE52960210A00201DF7 /* OFL.txt */,
+			);
+			path = Zen_Antique;
+			sourceTree = "<group>";
+		};
+		C3504CE82960212100201DF7 /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				C3504CE32960210A00201DF7 /* Zen_Antique */,
+			);
+			path = Resouces;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				603AEC8F2903FDCC008B396D /* Preview Assets.xcassets in Resources */,
+				C3504CE62960210A00201DF7 /* ZenAntique-Regular.ttf in Resources */,
+				C3504CE72960210A00201DF7 /* OFL.txt in Resources */,
 				603AEC8C2903FDCC008B396D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +440,7 @@
 				DEVELOPMENT_TEAM = BQ9TA5PGM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Astrum/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "デスクの写真を設定する為にフォトライブラリにアクセスします";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -444,6 +471,7 @@
 				DEVELOPMENT_TEAM = BQ9TA5PGM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Astrum/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "デスクの写真を設定する為にフォトライブラリにアクセスします";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
