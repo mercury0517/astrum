@@ -71,7 +71,7 @@ struct MyDeskView: View {
     private func resetDeskImage() {
         ImageManager.shared.deleteImage(name: "deskImage")
         deskImage = nil
-        HapticFeedbackManager.shared.play(.notification(.success))
+        HapticFeedbackManager.shared.play(.impact(.soft))
     }
 }
 

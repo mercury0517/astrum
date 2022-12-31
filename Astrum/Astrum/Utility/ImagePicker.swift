@@ -46,7 +46,7 @@ struct ImagePicker: UIViewControllerRepresentable {
                         self?.parent.image = image
                     }
                     ImageManager.shared.writeImage(name: "deskImage", uiImage: image)
-                    HapticFeedbackManager.shared.play(.notification(.success))
+                    HapticFeedbackManager.shared.play(.impact(.soft))
                 }
             }
         }
