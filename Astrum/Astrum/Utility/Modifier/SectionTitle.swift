@@ -10,7 +10,7 @@ import SwiftUI
 struct SectionTitle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.title)
+            .font(.title2)
             .foregroundColor(.white)
             .padding(.leading, 16)
             .fontWeight(.bold)

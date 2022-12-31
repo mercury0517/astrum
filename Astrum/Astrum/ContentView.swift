@@ -21,8 +21,8 @@ struct ContentView: View {
         
         let appearance = UITabBarAppearance()
         appearance.shadowImage = image
-        appearance.selectionIndicatorTintColor = .white
-        appearance.backgroundColor = .black
+        appearance.selectionIndicatorTintColor = .blue
+        appearance.backgroundColor = UIColor(40, 40, 43) // matteBlack
         
         UITabBar.appearance().standardAppearance = appearance
     }
@@ -45,7 +45,7 @@ struct ContentView: View {
                     }
                 }.tag(2)
         }
-        .accentColor(.white)
+        .accentColor(.blue)
     }
 }
 

@@ -16,7 +16,7 @@ struct MyDeskView: View {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithDefaultBackground()
         
-        navigationBarAppearance.backgroundColor = UIColor(40, 40, 43)
+        navigationBarAppearance.backgroundColor = UIColor(40, 40, 43) // matteBlack
         navigationBarAppearance.titleTextAttributes = [
             .foregroundColor: UIColor.white,
             .font: UIFont(name: "ZenAntique-Regular", size: 24) ?? .systemFont(ofSize: 24)
