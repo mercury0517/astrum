@@ -9,18 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     init() {
-        let image = UIImage.gradientImageWithBounds(
-            bounds: CGRect(
-                x: 0, y: 0, width: UIScreen.main.scale, height: 5
-            ),
-            colors: [
-                UIColor(227, 215, 163).withAlphaComponent(0.1).cgColor,
-                UIColor(227, 215, 163).cgColor
-            ]
-        )
-        
         let appearance = UITabBarAppearance()
-        appearance.shadowImage = image
         appearance.selectionIndicatorTintColor = .blue
         appearance.backgroundColor = UIColor(40, 40, 43) // matteBlack
         
@@ -32,7 +21,7 @@ struct ContentView: View {
             MyDeskView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "desktopcomputer")
+                        Image(systemName: "display")
                         Text("マイデスク")
                     }
                 }.tag(1)
@@ -44,14 +33,6 @@ struct ContentView: View {
                         Text("お気に入り")
                     }
                 }.tag(2)
-            
-            FavoritesView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "gear")
-                        Text("設定")
-                    }
-                }.tag(3)
         }
         .accentColor(.blue)
     }

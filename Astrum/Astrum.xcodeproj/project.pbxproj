@@ -33,6 +33,7 @@
 		C3504CE22960117000201DF7 /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CE12960117000201DF7 /* ItemCellView.swift */; };
 		C3504CE62960210A00201DF7 /* ZenAntique-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3504CE42960210A00201DF7 /* ZenAntique-Regular.ttf */; };
 		C3504CE72960210A00201DF7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C3504CE52960210A00201DF7 /* OFL.txt */; };
+		C3504CEB296124C700201DF7 /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CEA296124C700201DF7 /* SimpleTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		C3504CE42960210A00201DF7 /* ZenAntique-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenAntique-Regular.ttf"; sourceTree = "<group>"; };
 		C3504CE52960210A00201DF7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		C3504CE92960217F00201DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C3504CEA296124C700201DF7 /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C32BA68C2940C8F000E7D0D4 /* SectionTitle.swift */,
+				C3504CEA296124C700201DF7 /* SimpleTextField.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				C314C968293CB3D80053868E /* ItemView.swift in Sources */,
 				C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */,
 				C32BA6A029458A0400E7D0D4 /* FavoritesView.swift in Sources */,
+				C3504CEB296124C700201DF7 /* SimpleTextField.swift in Sources */,
 				603AEC9B29042709008B396D /* ColorExtension.swift in Sources */,
 				C314C960293B7E450053868E /* DisplayStandView.swift in Sources */,
 				C314C962293B830E0053868E /* ImagePicker.swift in Sources */,

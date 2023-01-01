@@ -14,6 +14,7 @@ struct ItemRegistrationView: View {
     
     init() {
         UITextView.appearance().textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
+        UITextView.appearance().backgroundColor = .clear // TextViewのデフォルト背景色を消したい(iOS15以下はこちら)
     }
     
     var body: some View {
@@ -21,9 +22,9 @@ struct ItemRegistrationView: View {
             ZStack {
                 BackgroundView()
                 
-                VStack {
+                VStack(spacing: 8) {
                     HStack {
-                        Text("タイトル")
+                        Text("タイトル*")
                             .foregroundColor(.white)
                         Spacer()
                     }
@@ -31,13 +32,7 @@ struct ItemRegistrationView: View {
                     .padding(.trailing, 16)
                     
                     TextField("", text: $itemName)
-                        .padding(8)
-                        .frame(height: 50)
-                        .border(width: 1, edges: [.top, .leading, .bottom, .trailing], color: .gray)
-                        .foregroundColor(.white)
-                        .padding(.leading, 16)
-                        .padding(.trailing, 16)
-                        .padding(.bottom, 16)
+                        .modifier(SimpleTextField())
                     
                     HStack {
                         Text("メモ")
@@ -48,19 +43,30 @@ struct ItemRegistrationView: View {
                     .padding(.trailing, 16)
 
                     TextEditor(text: $itemText)
+                        .scrollContentBackground(.hidden) // TextViewのデフォルト背景色を消したい(iOS16以降)
+                        .background(Color.matteBlack)
+                        .foregroundColor(.white)
                         .frame(width: UIScreen.main.bounds.width - 32, height: 200)
                         .border(Color.gray, width: 1)
-
-                    Text("Register New Item \(itemName)")
-                        .foregroundColor(.white)
-
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "x.circle")
-                            .resizable()
-                            .frame(width: 50, height: 50)
+                        .padding(.bottom, 16)
+                    
+                    HStack {
+                        Text("URL")
+                            .foregroundColor(.white)
+                        Spacer()
                     }
+                    .padding(.leading, 16)
+                    .padding(.trailing, 16)
+                    
+                    TextField("", text: $itemName)
+                        .modifier(SimpleTextField())
+
+                    Button("アイテムを追加する") {
+                        dismiss()
+                    }
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 44)
+                    .foregroundColor(.white)
+                    .background(.blue)
                     
                     Spacer()
                 }
