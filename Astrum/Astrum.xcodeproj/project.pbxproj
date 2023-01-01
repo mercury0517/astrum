@@ -34,6 +34,8 @@
 		C3504CE62960210A00201DF7 /* ZenAntique-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3504CE42960210A00201DF7 /* ZenAntique-Regular.ttf */; };
 		C3504CE72960210A00201DF7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C3504CE52960210A00201DF7 /* OFL.txt */; };
 		C3504CEB296124C700201DF7 /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CEA296124C700201DF7 /* SimpleTextField.swift */; };
+		C3504CEE2961CA5000201DF7 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CED2961CA5000201DF7 /* SetupView.swift */; };
+		C3504CF02961CBD500201DF7 /* SetupCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CEF2961CBD500201DF7 /* SetupCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		C3504CE52960210A00201DF7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		C3504CE92960217F00201DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C3504CEA296124C700201DF7 /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
+		C3504CED2961CA5000201DF7 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		C3504CEF2961CBD500201DF7 /* SetupCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +170,10 @@
 		C32BA6932942034700E7D0D4 /* MyDesk */ = {
 			isa = PBXGroup;
 			children = (
-				C32BA6962943565D00E7D0D4 /* ItemView */,
 				C32BA68A2940C7BE00E7D0D4 /* DisplayView */,
+				C32BA6962943565D00E7D0D4 /* ItemView */,
 				60235CEC292CF22E0086CC3D /* MyDeskView.swift */,
+				C3504CEC2961CA3100201DF7 /* SetupView */,
 			);
 			path = MyDesk;
 			sourceTree = "<group>";
@@ -216,6 +221,15 @@
 				C3504CE32960210A00201DF7 /* Zen_Antique */,
 			);
 			path = Resouces;
+			sourceTree = "<group>";
+		};
+		C3504CEC2961CA3100201DF7 /* SetupView */ = {
+			isa = PBXGroup;
+			children = (
+				C3504CEF2961CBD500201DF7 /* SetupCellView.swift */,
+				C3504CED2961CA5000201DF7 /* SetupView.swift */,
+			);
+			path = SetupView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,8 +324,10 @@
 				604441F2293B46A20075E5CD /* DisplayView.swift in Sources */,
 				603AEC9D29042DEF008B396D /* ViewExtension.swift in Sources */,
 				C32BA69829435B4D00E7D0D4 /* ItemLabel.swift in Sources */,
+				C3504CF02961CBD500201DF7 /* SetupCellView.swift in Sources */,
 				60235CED292CF22E0086CC3D /* MyDeskView.swift in Sources */,
 				C32BA69B29449EAE00E7D0D4 /* BackgroundView.swift in Sources */,
+				C3504CEE2961CA5000201DF7 /* SetupView.swift in Sources */,
 				C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,7 +33,8 @@ struct MyDeskView: View {
                 BackgroundView()
                 
                 ScrollView(showsIndicators: true) {
-                    VStack {
+                    VStack(spacing: 0) {
+                        // モニターのエリア
                         ZStack {
                             LinearGradient(
                                 gradient: Gradient(colors: [.orange, .red, .purple, .blue]),
@@ -44,10 +45,11 @@ struct MyDeskView: View {
                             
                             DisplayView(deskImage: $deskImage)
                         }
-                        
+
+                        SetupView()
+                            .padding(.top, 24)
                         
                         ItemView()
-                            .padding(.top, 24)
                         
                         Spacer()
                     }

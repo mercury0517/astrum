@@ -1,28 +1,28 @@
 //
-//  ItemView.swift
+//  SetupView.swift
 //  Astrum
 //
-//  Created by 伊原明宏 on 2022/12/04.
+//  Created by 伊原明宏 on 2023/01/01.
 //
 
 import SwiftUI
 
-struct ItemView: View {
+struct SetupView: View {
     @State private var isNextPresented = false
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
 
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
-                Text("Items")
+                Text("Setup")
                     .modifier(SectionTitle())
                 
                 Spacer()
-                
+
                 Button(action: {
                     isNextPresented.toggle()
                 }) {
-                    Image(systemName: "plus.circle")
+                    Image(systemName: "questionmark.circle")
                         .roundButton()
                 }
                 .sheet(isPresented: $isNextPresented) {
@@ -32,9 +32,10 @@ struct ItemView: View {
             }
 
             LazyVGrid(columns: columns, spacing: 16) {
-                ForEach((1...12), id: \.self) { _ in
-                    ItemCellView()
-                }
+                SetupCellView(itemColor: .orange)
+                SetupCellView(itemColor: .red)
+                SetupCellView(itemColor: .purple)
+                SetupCellView(itemColor: .blue)
             }
             .padding(16)
         }
@@ -42,12 +43,8 @@ struct ItemView: View {
     }
 }
 
-struct ItemsView_Previews: PreviewProvider {
+struct SetupView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            BackgroundView()
-            
-            ItemView()
-        }
+        SetupView()
     }
 }
