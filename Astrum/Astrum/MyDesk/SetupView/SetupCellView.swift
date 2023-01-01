@@ -26,8 +26,9 @@ struct SetupCellView: View {
                 
                 Image(systemName: "display")
                     .resizable()
+                    .scaledToFit()
                     .foregroundColor(.white)
-                    .frame(width: 30, height: 30)
+                    .frame(width: 30)
             }
         }
     }

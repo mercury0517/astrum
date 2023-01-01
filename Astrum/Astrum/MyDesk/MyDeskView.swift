@@ -51,6 +51,8 @@ struct MyDeskView: View {
                         
                         ItemView()
                         
+                        WishListView()
+                        
                         Spacer()
                     }
                 }

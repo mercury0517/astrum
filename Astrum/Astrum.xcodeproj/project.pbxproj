@@ -36,6 +36,7 @@
 		C3504CEB296124C700201DF7 /* SimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CEA296124C700201DF7 /* SimpleTextField.swift */; };
 		C3504CEE2961CA5000201DF7 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CED2961CA5000201DF7 /* SetupView.swift */; };
 		C3504CF02961CBD500201DF7 /* SetupCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CEF2961CBD500201DF7 /* SetupCellView.swift */; };
+		C3504CF32961D1EA00201DF7 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CF22961D1EA00201DF7 /* WishListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		C3504CEA296124C700201DF7 /* SimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextField.swift; sourceTree = "<group>"; };
 		C3504CED2961CA5000201DF7 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		C3504CEF2961CBD500201DF7 /* SetupCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCellView.swift; sourceTree = "<group>"; };
+		C3504CF22961D1EA00201DF7 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				C32BA6962943565D00E7D0D4 /* ItemView */,
 				60235CEC292CF22E0086CC3D /* MyDeskView.swift */,
 				C3504CEC2961CA3100201DF7 /* SetupView */,
+				C3504CF12961D1C600201DF7 /* WishListView */,
 			);
 			path = MyDesk;
 			sourceTree = "<group>";
@@ -230,6 +233,14 @@
 				C3504CED2961CA5000201DF7 /* SetupView.swift */,
 			);
 			path = SetupView;
+			sourceTree = "<group>";
+		};
+		C3504CF12961D1C600201DF7 /* WishListView */ = {
+			isa = PBXGroup;
+			children = (
+				C3504CF22961D1EA00201DF7 /* WishListView.swift */,
+			);
+			path = WishListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +326,7 @@
 				C314C95C293B7D360053868E /* DisplayScreenView.swift in Sources */,
 				C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */,
 				C314C968293CB3D80053868E /* ItemView.swift in Sources */,
+				C3504CF32961D1EA00201DF7 /* WishListView.swift in Sources */,
 				C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */,
 				C32BA6A029458A0400E7D0D4 /* FavoritesView.swift in Sources */,
 				C3504CEB296124C700201DF7 /* SimpleTextField.swift in Sources */,

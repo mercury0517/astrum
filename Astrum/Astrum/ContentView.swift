@@ -17,24 +17,24 @@ struct ContentView: View {
     }
     
     var body: some View {
-        TabView {
+//        TabView {
             MyDeskView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "display")
-                        Text("マイデスク")
-                    }
-                }.tag(1)
-            
-            FavoritesView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "star")
-                        Text("お気に入り")
-                    }
-                }.tag(2)
-        }
-        .accentColor(.blue)
+//                .tabItem {
+//                    VStack {
+//                        Image(systemName: "display")
+//                        Text("マイデスク")
+//                    }
+//                }.tag(1)
+//
+//            FavoritesView()
+//                .tabItem {
+//                    VStack {
+//                        Image(systemName: "star")
+//                        Text("お気に入り")
+//                    }
+//                }.tag(2)
+//        }
+//        .accentColor(.blue)
     }
 }
 
