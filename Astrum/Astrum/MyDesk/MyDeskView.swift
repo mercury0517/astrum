@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyDeskView: View {
     @State var deskImage: UIImage? = ImageManager.shared.getImage(name: "deskImage")
+    @State private var showingAlert = false
     
     init(deskImage: UIImage? = nil) {
         self.deskImage = deskImage
@@ -58,14 +59,30 @@ struct MyDeskView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Button(
-                            "デスクの画像を削除",
-                            role: .destructive,
-                            action: { resetDeskImage() }
+                            "設定",
+                            role: .none,
+                            action: {}
                         )
+
+                        // ディスプレイに写真が設定されている時は、メニューから写真を削除できる様にする
+                        if deskImage != nil {
+                            Button(
+                                "デスクの写真を削除",
+                                role: .destructive,
+                                action: { showingAlert = true }
+                            )
+                        }
                     } label: {
                         Image(systemName: "ellipsis.circle")
                             .roundButton()
                     }
+                }
+            }
+            .alert("ディスプレイに表示されているデスクの写真を削除しますか？", isPresented: $showingAlert) {
+                Button("キャンセル", role: .cancel, action: {})
+                
+                Button("削除", role: .destructive) {
+                    resetDeskImage()
                 }
             }
         }
