@@ -47,9 +47,18 @@ struct ItemRegistrationView: View {
                                 }
                                 
                             } else {
-                                Rectangle()
-                                    .foregroundColor(.matteBlack)
-                                    .frame(width: UIScreen.main.bounds.width, height: 250)
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.matteBlack)
+                                        .frame(width: UIScreen.main.bounds.width, height: 250)
+                                    
+                                    Image(systemName: "photo")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(.gray)
+                                        .frame(width: 30)
+                                    
+                                }
                             }
                         }
                         .onChange(of: selectedItem) { newItem in
