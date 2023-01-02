@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ItemRegistrationView: View {
+    @State private var selectedItem: PhotosPickerItem? = nil
+    @State private var selectedImageData: Data? = nil
     @State private var itemName = ""
     @State private var itemText = ""
     @Environment(\.dismiss) private var dismiss
@@ -22,55 +25,89 @@ struct ItemRegistrationView: View {
             ZStack {
                 BackgroundView()
                 
-                VStack(spacing: 8) {
-                    HStack {
-                        Text("タイトル*")
+                ScrollView {
+                    VStack(spacing: 8) {
+                        PhotosPicker(
+                            selection: $selectedItem,
+                            matching: .images,
+                            photoLibrary: .shared()
+                        ) {
+                            if let selectedImageData,
+                               let uiImage = UIImage(data: selectedImageData) {
+                                ZStack {
+                                    Rectangle()
+                                        .foregroundColor(.matteBlack)
+                                        .frame(width: UIScreen.main.bounds.width, height: 250)
+                                    
+                                    Image(uiImage: uiImage)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: UIScreen.main.bounds.width, height: 250)
+                                        .clipped()
+                                }
+                                
+                            } else {
+                                Rectangle()
+                                    .foregroundColor(.matteBlack)
+                                    .frame(width: UIScreen.main.bounds.width, height: 250)
+                            }
+                        }
+                        .onChange(of: selectedItem) { newItem in
+                            Task {
+                                if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                    selectedImageData = data
+                                }
+                            }
+                        }
+                        
+                        HStack {
+                            Text("タイトル*")
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
+                        .padding(.leading, 16)
+                        .padding(.trailing, 16)
+                        .padding(.top, 16)
+                        
+                        TextField("", text: $itemName)
+                            .modifier(SimpleTextField())
+                        
+                        HStack {
+                            Text("メモ")
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
+                        .padding(.leading, 16)
+                        .padding(.trailing, 16)
+                        
+                        TextEditor(text: $itemText)
+                            .scrollContentBackground(.hidden) // TextViewのデフォルト背景色を消したい(iOS16以降)
+                            .background(Color.matteBlack)
                             .foregroundColor(.white)
-                        Spacer()
-                    }
-                    .padding(.leading, 16)
-                    .padding(.trailing, 16)
-                    
-                    TextField("", text: $itemName)
-                        .modifier(SimpleTextField())
-                    
-                    HStack {
-                        Text("メモ")
-                            .foregroundColor(.white)
-                        Spacer()
-                    }
-                    .padding(.leading, 16)
-                    .padding(.trailing, 16)
-
-                    TextEditor(text: $itemText)
-                        .scrollContentBackground(.hidden) // TextViewのデフォルト背景色を消したい(iOS16以降)
-                        .background(Color.matteBlack)
+                            .frame(width: UIScreen.main.bounds.width - 32, height: 200)
+                            .border(Color.gray, width: 1)
+                            .padding(.bottom, 16)
+                        
+                        HStack {
+                            Text("URL")
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
+                        .padding(.leading, 16)
+                        .padding(.trailing, 16)
+                        
+                        TextField("", text: $itemName)
+                            .modifier(SimpleTextField())
+                        
+                        Button("アイテムを追加する") {
+                            dismiss()
+                        }
+                        .frame(width: UIScreen.main.bounds.width - 32, height: 44)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.main.bounds.width - 32, height: 200)
-                        .border(Color.gray, width: 1)
-                        .padding(.bottom, 16)
-                    
-                    HStack {
-                        Text("URL")
-                            .foregroundColor(.white)
-                        Spacer()
+                        .background(.blue)
+                        .padding(.bottom, 32)
                     }
-                    .padding(.leading, 16)
-                    .padding(.trailing, 16)
-                    
-                    TextField("", text: $itemName)
-                        .modifier(SimpleTextField())
-
-                    Button("アイテムを追加する") {
-                        dismiss()
-                    }
-                    .frame(width: UIScreen.main.bounds.width - 32, height: 44)
-                    .foregroundColor(.white)
-                    .background(.blue)
-                    
-                    Spacer()
                 }
-                .padding(.top, 16)
             } 
         }
     }
