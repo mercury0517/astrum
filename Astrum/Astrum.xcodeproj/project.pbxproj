@@ -37,6 +37,7 @@
 		C3504CEE2961CA5000201DF7 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CED2961CA5000201DF7 /* SetupView.swift */; };
 		C3504CF02961CBD500201DF7 /* SetupCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CEF2961CBD500201DF7 /* SetupCellView.swift */; };
 		C3504CF32961D1EA00201DF7 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CF22961D1EA00201DF7 /* WishListView.swift */; };
+		C3504CF529641C1000201DF7 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CF429641C1000201DF7 /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		C3504CED2961CA5000201DF7 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		C3504CEF2961CBD500201DF7 /* SetupCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCellView.swift; sourceTree = "<group>"; };
 		C3504CF22961D1EA00201DF7 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
+		C3504CF429641C1000201DF7 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				C32BA68A2940C7BE00E7D0D4 /* DisplayView */,
 				C32BA6962943565D00E7D0D4 /* ItemView */,
 				60235CEC292CF22E0086CC3D /* MyDeskView.swift */,
+				C3504CF429641C1000201DF7 /* SettingView.swift */,
 				C3504CEC2961CA3100201DF7 /* SetupView */,
 				C3504CF12961D1C600201DF7 /* WishListView */,
 			);
@@ -336,6 +339,7 @@
 				604441F2293B46A20075E5CD /* DisplayView.swift in Sources */,
 				603AEC9D29042DEF008B396D /* ViewExtension.swift in Sources */,
 				C32BA69829435B4D00E7D0D4 /* ItemLabel.swift in Sources */,
+				C3504CF529641C1000201DF7 /* SettingView.swift in Sources */,
 				C3504CF02961CBD500201DF7 /* SetupCellView.swift in Sources */,
 				60235CED292CF22E0086CC3D /* MyDeskView.swift in Sources */,
 				C32BA69B29449EAE00E7D0D4 /* BackgroundView.swift in Sources */,

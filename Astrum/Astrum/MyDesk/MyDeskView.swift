@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyDeskView: View {
     @State var deskImage: UIImage? = ImageManager.shared.getImage(name: "deskImage")
+    @State private var isSettingViewPresented = false
     @State private var showingAlert = false
     
     init(deskImage: UIImage? = nil) {
@@ -65,7 +66,7 @@ struct MyDeskView: View {
                         Button(
                             "設定",
                             role: .none,
-                            action: {}
+                            action: { isSettingViewPresented = true }
                         )
 
                         // ディスプレイに写真が設定されている時は、メニューから写真を削除できる様にする
@@ -81,6 +82,9 @@ struct MyDeskView: View {
                             .roundButton()
                     }
                 }
+            }
+            .sheet(isPresented: $isSettingViewPresented) {
+                SettingView()
             }
             .alert("ディスプレイに表示されているデスクの写真を削除しますか？", isPresented: $showingAlert) {
                 Button("キャンセル", role: .cancel, action: {})
