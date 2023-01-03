@@ -12,9 +12,8 @@ struct SimpleTextField: ViewModifier {
         content
             .padding(8)
             .frame(height: 50)
-            .border(width: 1, edges: [.top, .leading, .bottom, .trailing], color: .gray)
-            .background(Color.matteBlack)
-            .foregroundColor(.white)
+            .background(.white)
+            .foregroundColor(.black)
             .padding(.leading, 16)
             .padding(.trailing, 16)
             .padding(.bottom, 16)

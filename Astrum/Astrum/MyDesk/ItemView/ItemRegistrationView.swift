@@ -13,6 +13,7 @@ struct ItemRegistrationView: View {
     @State private var selectedImageData: Data? = nil
     @State private var itemName = ""
     @State private var itemText = ""
+    @State private var itemURL = ""
     @Environment(\.dismiss) private var dismiss
     
     init() {
@@ -91,10 +92,9 @@ struct ItemRegistrationView: View {
                         
                         TextEditor(text: $itemText)
                             .scrollContentBackground(.hidden) // TextViewのデフォルト背景色を消したい(iOS16以降)
-                            .background(Color.matteBlack)
-                            .foregroundColor(.white)
+                            .background(Color.white)
+                            .foregroundColor(.black)
                             .frame(width: UIScreen.main.bounds.width - 32, height: 200)
-                            .border(Color.gray, width: 1)
                             .padding(.bottom, 16)
                         
                         HStack {
@@ -105,16 +105,17 @@ struct ItemRegistrationView: View {
                         .padding(.leading, 16)
                         .padding(.trailing, 16)
                         
-                        TextField("", text: $itemName)
+                        TextField("", text: $itemURL)
                             .modifier(SimpleTextField())
                         
-                        Button("アイテムを追加する") {
+                        Button("アイテムを追加") {
                             dismiss()
                         }
                         .frame(width: UIScreen.main.bounds.width - 32, height: 44)
                         .foregroundColor(.white)
-                        .background(.blue)
-                        .padding(.bottom, 32)
+                        .background(itemName.isEmpty ? .gray : .blue)
+                        .padding(.bottom, 144)
+                        .disabled(itemName.isEmpty)
                     }
                 }
             } 
