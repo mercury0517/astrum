@@ -92,8 +92,8 @@ struct ItemRegistrationView: View {
                         
                         TextEditor(text: $itemText)
                             .scrollContentBackground(.hidden) // TextViewのデフォルト背景色を消したい(iOS16以降)
-                            .background(Color.white)
-                            .foregroundColor(.black)
+                            .background(Color.matteBlack)
+                            .foregroundColor(.white)
                             .frame(width: UIScreen.main.bounds.width - 32, height: 200)
                             .padding(.bottom, 16)
                         
