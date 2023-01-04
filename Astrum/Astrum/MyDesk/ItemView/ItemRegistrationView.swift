@@ -12,13 +12,17 @@ struct ItemRegistrationView: View {
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
     @State private var itemName = ""
-    @State private var itemText = ""
+    @State private var itemMemo = ""
     @State private var itemURL = ""
     @Environment(\.dismiss) private var dismiss
     
+    enum FocusField: String {
+        case name, memo, url
+    }
+    @FocusState private var focusField: FocusField?
+    
     init() {
         UITextView.appearance().textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
-        UITextView.appearance().backgroundColor = .clear // TextViewのデフォルト背景色を消したい(iOS15以下はこちら)
     }
     
     var body: some View {
@@ -33,8 +37,10 @@ struct ItemRegistrationView: View {
                             matching: .images,
                             photoLibrary: .shared()
                         ) {
-                            if let selectedImageData,
-                               let uiImage = UIImage(data: selectedImageData) {
+                            if
+                                let selectedImageData,
+                                let uiImage = UIImage(data: selectedImageData)
+                            {
                                 ZStack {
                                     Rectangle()
                                         .foregroundColor(.matteBlack)
@@ -46,7 +52,6 @@ struct ItemRegistrationView: View {
                                         .frame(width: UIScreen.main.bounds.width, height: 250)
                                         .clipped()
                                 }
-                                
                             } else {
                                 ZStack {
                                     Rectangle()
@@ -81,6 +86,7 @@ struct ItemRegistrationView: View {
                         
                         TextField("", text: $itemName)
                             .modifier(SimpleTextField())
+                            .focused($focusField, equals: .name)
                         
                         HStack {
                             Text("メモ")
@@ -90,12 +96,13 @@ struct ItemRegistrationView: View {
                         .padding(.leading, 16)
                         .padding(.trailing, 16)
                         
-                        TextEditor(text: $itemText)
+                        TextEditor(text: $itemMemo)
                             .scrollContentBackground(.hidden) // TextViewのデフォルト背景色を消したい(iOS16以降)
                             .background(Color.matteBlack)
                             .foregroundColor(.white)
                             .frame(width: UIScreen.main.bounds.width - 32, height: 200)
                             .padding(.bottom, 16)
+                            .focused($focusField, equals: .memo)
                         
                         HStack {
                             Text("URL")
@@ -107,6 +114,7 @@ struct ItemRegistrationView: View {
                         
                         TextField("", text: $itemURL)
                             .modifier(SimpleTextField())
+                            .focused($focusField, equals: .url)
                         
                         Button("アイテムを追加") {
                             dismiss()
@@ -118,6 +126,14 @@ struct ItemRegistrationView: View {
                         .disabled(itemName.isEmpty)
                     }
                 }
+                    .toolbar() {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Spacer()
+                            Button("完了") {
+                                focusField = nil // キーボードからフォーカスを外す
+                            }
+                        }
+                    }
             } 
         }
     }
