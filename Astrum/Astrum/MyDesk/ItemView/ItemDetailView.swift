@@ -8,19 +8,34 @@
 import SwiftUI
 
 struct ItemDetailView: View {
+    private let item: DeskItem
+    private let itemImage: UIImage?
+    
+    init(item: DeskItem, itemImage: UIImage?) {
+        self.item = item
+        self.itemImage = itemImage
+    }
+    
     var body: some View {
         ZStack {
             BackgroundView()
             
             ScrollView() {
                 VStack(spacing: 16) {
-                    Image("sampleItem")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: UIScreen.main.bounds.width, height: 250)
-                    
+                    // 画像の有無で表示を切り替え
+                    if let itemImage {
+                        Image(uiImage: itemImage)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width, height: 250)
+                    } else {
+                        Rectangle()
+                            .frame(width: UIScreen.main.bounds.width, height: 250)
+                            .background(.gray)
+                    }
+
                     HStack {
-                        Text("Apple Studio Display")
+                        Text(item.title)
                             .font(.title)
                             .foregroundColor(.white)
                         Spacer()
@@ -28,12 +43,20 @@ struct ItemDetailView: View {
                     .padding(.leading, 16)
                     .padding(.trailing, 16)
                     
-                    Text("27-inch 5K Retina display. 12MP Ultra Wide camera with Center Stage. Studio-quality mics. Six-speaker sound system with Spatial Audio.")
-                        .foregroundColor(.white)
-                        .padding(.leading, 16)
-                        .padding(.trailing, 16)
+                    if let memo = item.memo {
+                        HStack {
+                            Text(memo)
+                                .foregroundColor(.white)
+                                .padding(.leading, 16)
+                                .padding(.trailing, 16)
+                            Spacer()
+                        }
+                    }
                     
-                    if let url = URL(string: "https://www.apple.com/") {
+                    if
+                        let urlString = item.url?.trimmingCharacters(in: .whitespaces),
+                        let url = URL(string: urlString)
+                    {
                         HStack {
                             Link(url.absoluteString, destination: url)
                                 .foregroundColor(.blue)
@@ -43,16 +66,7 @@ struct ItemDetailView: View {
                             Spacer()
                         }
                     }
-                    
-                    HStack {
-                        Text("Date of purchase: 2022/12/11")
-                            .foregroundColor(.white)
-                            .padding(.leading, 16)
-                            .padding(.trailing, 16)
-                        
-                        Spacer()
-                    }
-                    
+
                     Spacer()
                 }
             }
@@ -62,6 +76,6 @@ struct ItemDetailView: View {
 
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetailView()
+        ItemDetailView(item: DeskItemFixture.sampleItem(), itemImage: UIImage(named: "sampleItem"))
     }
 }

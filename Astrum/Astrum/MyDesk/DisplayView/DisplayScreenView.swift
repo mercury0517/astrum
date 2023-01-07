@@ -19,7 +19,7 @@ struct DisplayScreenView: View {
                 Rectangle()
                     .foregroundColor(.black)
                     .frame(width: itemWidth - 10, height: 240)
-                
+
                 Image(uiImage: unwrappedImage)
                     .resizable()
                     .scaledToFill()

@@ -15,3 +15,16 @@ class DeskItem: Object {
     @objc dynamic var url: String?
     @objc dynamic var isWishList: Bool = false
 }
+
+class DeskItemFixture {
+    static func sampleItem() -> DeskItem {
+        let item = DeskItem()
+        item.id = "12345"
+        item.title = "Apple Studio Display"
+        item.memo = "27-inch 5K Retina display. 12MP Ultra Wide camera with Center Stage. Studio-quality mics. Six-speaker sound system with Spatial Audio."
+        item.url = "https://www.hogefuga.com"
+        item.isWishList = false
+        
+        return item
+    }
+}

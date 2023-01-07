@@ -33,7 +33,7 @@ struct WishListView: View {
 
             LazyVGrid(columns: columns, spacing: 16) {
                 ForEach((1...8), id: \.self) { _ in
-                    ItemCellView()
+                    ItemCellView(item: DeskItemFixture.sampleItem())
                 }
             }
             .padding(16)

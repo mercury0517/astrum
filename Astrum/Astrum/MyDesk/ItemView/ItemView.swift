@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ItemView: View {
+    @State private var items: [DeskItem]
     @State private var isNextPresented = false
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
+
+    init() {
+        let realm = try! Realm()
+        let cachedItemList = realm.objects(DeskItem.self)
+        items = Array(cachedItemList.filter("isWishList == false")) // 所持しているアイテムのみを抽出
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -32,8 +40,12 @@ struct ItemView: View {
             }
 
             LazyVGrid(columns: columns, spacing: 16) {
-                ForEach((1...12), id: \.self) { _ in
-                    ItemCellView()
+//                ForEach((1...12), id: \.self) { _ in
+//                    ItemCellView()
+//                }
+                
+                ForEach(items, id: \.id) { item in
+                    ItemCellView(item: item)
                 }
             }
             .padding(16)
