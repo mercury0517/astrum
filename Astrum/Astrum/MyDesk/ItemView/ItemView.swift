@@ -34,16 +34,12 @@ struct ItemView: View {
                         .roundButton()
                 }
                 .sheet(isPresented: $isNextPresented) {
-                    ItemRegistrationView()
+                    ItemRegistrationView(items: $items)
                 }
                 .padding(.trailing, 16)
             }
 
             LazyVGrid(columns: columns, spacing: 16) {
-//                ForEach((1...12), id: \.self) { _ in
-//                    ItemCellView()
-//                }
-                
                 ForEach(items, id: \.id) { item in
                     ItemCellView(item: item)
                 }

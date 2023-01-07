@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WishListView: View {
     @State private var isNextPresented = false
+    @State private var sampleItemList = [DeskItemFixture.sampleItem()] // 後で消す
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
 
     var body: some View {
@@ -26,7 +27,7 @@ struct WishListView: View {
                         .roundButton()
                 }
                 .sheet(isPresented: $isNextPresented) {
-                    ItemRegistrationView()
+                    ItemRegistrationView(items: $sampleItemList)
                 }
                 .padding(.trailing, 16)
             }

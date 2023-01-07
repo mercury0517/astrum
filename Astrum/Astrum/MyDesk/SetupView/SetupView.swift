@@ -26,7 +26,7 @@ struct SetupView: View {
                         .roundButton()
                 }
                 .sheet(isPresented: $isNextPresented) {
-                    ItemRegistrationView()
+//                    ItemRegistrationView()
                 }
                 .padding(.trailing, 16)
             }

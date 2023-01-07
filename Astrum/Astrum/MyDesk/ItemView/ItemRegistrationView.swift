@@ -10,6 +10,7 @@ import RealmSwift
 import SwiftUI
 
 struct ItemRegistrationView: View {
+    @Binding private var items: [DeskItem]
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
     @State private var itemName = ""
@@ -21,8 +22,10 @@ struct ItemRegistrationView: View {
         case name, memo, url
     }
     @FocusState private var focusField: FocusField?
-    
-    init() {
+
+    init(items: Binding<[DeskItem]>) {
+        self._items = items
+
         UITextView.appearance().textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
     }
     
@@ -167,11 +170,17 @@ struct ItemRegistrationView: View {
         try! realm.write {
           realm.add(newItem)
         }
+        
+        // 最新のアイテムを取得し、ホーム画面にも反映させる
+        let cachedItemList = realm.objects(DeskItem.self)
+        items = Array(cachedItemList.filter("isWishList == false")) // 所持しているアイテムのみを抽出
     }
 }
 
 struct ItemRegistrationView_Previews: PreviewProvider {
+    @State private static var sampleItemList = [DeskItemFixture.sampleItem()]
+    
     static var previews: some View {
-        ItemRegistrationView()
+        ItemRegistrationView(items: $sampleItemList)
     }
 }
