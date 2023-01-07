@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct DeskItem {
-    let id: String
-    let title: String
-    let memo: String?
-    let url: String?
-    var isWishList: Bool
+class DeskItem: Object {
+    @objc dynamic var id: String = ""
+    @objc dynamic var title: String = ""
+    @objc dynamic var memo: String?
+    @objc dynamic var url: String?
+    @objc dynamic var isWishList: Bool = false
 }

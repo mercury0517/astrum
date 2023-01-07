@@ -5,8 +5,9 @@
 //  Created by 伊原明宏 on 2022/12/10.
 //
 
-import SwiftUI
 import PhotosUI
+import RealmSwift
+import SwiftUI
 
 struct ItemRegistrationView: View {
     @State private var selectedItem: PhotosPickerItem? = nil
@@ -115,26 +116,56 @@ struct ItemRegistrationView: View {
                         TextField("", text: $itemURL)
                             .modifier(SimpleTextField())
                             .focused($focusField, equals: .url)
-                        
-                        Button("アイテムを追加") {
+
+                        Button(action: {
+                            addNewItemToRealm()
                             dismiss()
+                        }) {
+                          Text("アイテムを追加")
+                            .frame(width: UIScreen.main.bounds.width - 32, height: 44)
+                            .foregroundColor(Color.white)
+                            .background(itemName.isEmpty ? .gray : .blue)
                         }
-                        .frame(width: UIScreen.main.bounds.width - 32, height: 44)
-                        .foregroundColor(.white)
-                        .background(itemName.isEmpty ? .gray : .blue)
                         .padding(.bottom, 144)
                         .disabled(itemName.isEmpty)
                     }
                 }
-                    .toolbar() {
-                        ToolbarItemGroup(placement: .keyboard) {
-                            Spacer()
-                            Button("完了") {
-                                focusField = nil // キーボードからフォーカスを外す
-                            }
+                .toolbar() {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("完了") {
+                            focusField = nil // キーボードからフォーカスを外す
                         }
                     }
+                }
             } 
+        }
+    }
+    
+    private func addNewItemToRealm() {
+        let newItemID = UUID().uuidString
+        
+        // 選択された画像をファイルに保存し、保存時のキーをDeskItemオブジェクトで管理
+        if
+            let selectedImageData,
+            let newImage = UIImage(data: selectedImageData)
+        {
+            ImageManager.shared.writeImage(name: newItemID, uiImage: newImage)
+        }
+
+        // 入力された情報で新規アイテムオブジェクトを作成
+        let newItem = DeskItem()
+        newItem.id = newItemID
+        newItem.title = itemName
+        newItem.memo = itemMemo
+        newItem.url = itemURL
+        newItem.isWishList = false // 所持しているアイテムとして追加
+        
+        // 新規アイテムを保存
+        let realm = try! Realm()
+        
+        try! realm.write {
+          realm.add(newItem)
         }
     }
 }
