@@ -38,6 +38,9 @@
 		C3504CF02961CBD500201DF7 /* SetupCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CEF2961CBD500201DF7 /* SetupCellView.swift */; };
 		C3504CF32961D1EA00201DF7 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CF22961D1EA00201DF7 /* WishListView.swift */; };
 		C3504CF529641C1000201DF7 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CF429641C1000201DF7 /* SettingView.swift */; };
+		C3504CF82969262B00201DF7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C3504CF72969262B00201DF7 /* Realm */; };
+		C3504CFA2969262B00201DF7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C3504CF92969262B00201DF7 /* RealmSwift */; };
+		C3504CFD2969268D00201DF7 /* DeskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CFC2969268D00201DF7 /* DeskItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,7 @@
 		C3504CEF2961CBD500201DF7 /* SetupCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCellView.swift; sourceTree = "<group>"; };
 		C3504CF22961D1EA00201DF7 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C3504CF429641C1000201DF7 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C3504CFC2969268D00201DF7 /* DeskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3504CFA2969262B00201DF7 /* RealmSwift in Frameworks */,
+				C3504CF82969262B00201DF7 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +112,13 @@
 		603AEC862903FDCC008B396D /* Astrum */ = {
 			isa = PBXGroup;
 			children = (
-				C3504CE92960217F00201DF7 /* Info.plist */,
 				603AEC8B2903FDCC008B396D /* Assets.xcassets */,
 				603AEC872903FDCC008B396D /* AstrumApp.swift */,
 				603AEC892903FDCC008B396D /* ContentView.swift */,
+				C3504CFB2969266F00201DF7 /* Entity */,
 				C32BA69E294589D700E7D0D4 /* Favorites */,
 				603AEC952903FE3B008B396D /* GlassCardView.swift */,
+				C3504CE92960217F00201DF7 /* Info.plist */,
 				C32BA6932942034700E7D0D4 /* MyDesk */,
 				603AEC8D2903FDCC008B396D /* Preview Content */,
 				C3504CE82960212100201DF7 /* Resouces */,
@@ -246,6 +253,14 @@
 			path = WishListView;
 			sourceTree = "<group>";
 		};
+		C3504CFB2969266F00201DF7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C3504CFC2969268D00201DF7 /* DeskItem.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,6 +277,10 @@
 			dependencies = (
 			);
 			name = Astrum;
+			packageProductDependencies = (
+				C3504CF72969262B00201DF7 /* Realm */,
+				C3504CF92969262B00201DF7 /* RealmSwift */,
+			);
 			productName = Astrum;
 			productReference = 603AEC842903FDCC008B396D /* Astrum.app */;
 			productType = "com.apple.product-type.application";
@@ -290,6 +309,9 @@
 				Base,
 			);
 			mainGroup = 603AEC7B2903FDCC008B396D;
+			packageReferences = (
+				C3504CF62969262B00201DF7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 603AEC852903FDCC008B396D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,6 +355,7 @@
 				C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */,
 				C32BA6A029458A0400E7D0D4 /* FavoritesView.swift in Sources */,
 				C3504CEB296124C700201DF7 /* SimpleTextField.swift in Sources */,
+				C3504CFD2969268D00201DF7 /* DeskItem.swift in Sources */,
 				603AEC9B29042709008B396D /* ColorExtension.swift in Sources */,
 				C314C960293B7E450053868E /* DisplayStandView.swift in Sources */,
 				C314C962293B830E0053868E /* ImagePicker.swift in Sources */,
@@ -549,6 +572,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C3504CF62969262B00201DF7 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.33.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C3504CF72969262B00201DF7 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3504CF62969262B00201DF7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		C3504CF92969262B00201DF7 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3504CF62969262B00201DF7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 603AEC7C2903FDCC008B396D /* Project object */;
 }
