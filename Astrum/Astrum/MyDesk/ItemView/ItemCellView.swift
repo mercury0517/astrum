@@ -12,14 +12,20 @@ struct ItemCellView: View {
     private let itemImage: UIImage?
     private let itemSize = (UIScreen.main.bounds.width - 80) / 4
 
-    init(item: DeskItem) {
+    @Binding private var items: [DeskItem] // アイテムに変更を加えた場合に、ホーム画面のアイテム一覧も更新したい
+
+    init(item: DeskItem, items: Binding<[DeskItem]>) {
         self.item = item
         self.itemImage = ImageManager.shared.getImage(name: self.item.id)
+
+        self._items = items
     }
 
     var body: some View {
         NavigationLink {
-            ItemDetailView(item: item, itemImage: itemImage)
+            ItemDetailView(
+                item: item, itemImage: itemImage, items: $items
+            )
         } label: {
             if let cellImage = itemImage {
                 Image(uiImage: cellImage)
@@ -39,7 +45,9 @@ struct ItemCellView: View {
 }
 
 struct ItemCellVIew_Previews: PreviewProvider {
+    @State private static var sampleItemList = [DeskItemFixture.sampleItem()]
+    
     static var previews: some View {
-        ItemCellView(item: DeskItemFixture.sampleItem())
+        ItemCellView(item: DeskItemFixture.sampleItem(), items: $sampleItemList)
     }
 }

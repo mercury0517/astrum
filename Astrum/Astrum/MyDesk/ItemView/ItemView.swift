@@ -41,7 +41,7 @@ struct ItemView: View {
 
             LazyVGrid(columns: columns, spacing: 16) {
                 ForEach(items, id: \.id) { item in
-                    ItemCellView(item: item)
+                    ItemCellView(item: item, items: $items)
                 }
             }
             .padding(16)
