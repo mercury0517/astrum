@@ -97,6 +97,8 @@ struct ItemDetailView: View {
 
                         Button("削除", role: .destructive) {
                             deleteItem()
+                            
+                            HapticFeedbackManager.shared.play(.impact(.soft))
 
                             // ホーム画面に戻る
                             dismiss()

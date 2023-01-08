@@ -212,6 +212,8 @@ struct ItemRegistrationView: View {
         // 最新のアイテムを取得し、ホーム画面にも反映させる
         let cachedItemList = realm.objects(DeskItem.self)
         items = Array(cachedItemList.filter("isWishList == false")) // 所持しているアイテムのみを抽出
+
+        HapticFeedbackManager.shared.play(.impact(.soft))
     }
     
     // アイテムの更新
@@ -244,6 +246,8 @@ struct ItemRegistrationView: View {
         // 最新のアイテムを取得し、ホーム画面にも反映させる
         let cachedItemList = realm.objects(DeskItem.self)
         items = Array(cachedItemList.filter("isWishList == false")) // 所持しているアイテムのみを抽出
+
+        HapticFeedbackManager.shared.play(.impact(.soft))
     }
 }
 
