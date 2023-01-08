@@ -12,6 +12,8 @@ struct WishListView: View {
     @State private var sampleItemList = [DeskItemFixture.sampleItem()] // 後で消す
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
 
+    @State private var emptyItem: DeskItem = DeskItemFixture.emptyItem()
+    
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
@@ -27,7 +29,7 @@ struct WishListView: View {
                         .roundButton()
                 }
                 .sheet(isPresented: $isNextPresented) {
-                    ItemRegistrationView(items: $sampleItemList)
+                    ItemRegistrationView(items: $sampleItemList, item: $emptyItem)
                 }
                 .padding(.trailing, 16)
             }

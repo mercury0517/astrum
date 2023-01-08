@@ -27,4 +27,15 @@ class DeskItemFixture {
         
         return item
     }
+    
+    static func emptyItem() -> DeskItem {
+        let item = DeskItem()
+        item.id = ""
+        item.title = ""
+        item.memo = ""
+        item.url = ""
+        item.isWishList = false
+
+        return item
+    }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ItemCellView: View {
-    private let item: DeskItem
+    @State private var item: DeskItem
     private let itemImage: UIImage?
     private let itemSize = (UIScreen.main.bounds.width - 80) / 4
 
@@ -16,7 +16,7 @@ struct ItemCellView: View {
 
     init(item: DeskItem, items: Binding<[DeskItem]>) {
         self.item = item
-        self.itemImage = ImageManager.shared.getImage(name: self.item.id)
+        self.itemImage = ImageManager.shared.getImage(name: item.id)
 
         self._items = items
     }
@@ -24,7 +24,7 @@ struct ItemCellView: View {
     var body: some View {
         NavigationLink {
             ItemDetailView(
-                item: item, itemImage: itemImage, items: $items
+                item: _item, itemImage: itemImage, items: $items
             )
         } label: {
             if let cellImage = itemImage {

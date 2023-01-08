@@ -11,8 +11,10 @@ import SwiftUI
 
 struct ItemRegistrationView: View {
     @Binding private var items: [DeskItem]
+    @Binding private var item: DeskItem // 編集時のみ、それ以外の場合は空のアイテムがセットされる
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
+    @State private var selectedImage: UIImage? = nil
     @State private var itemName = ""
     @State private var itemMemo = ""
     @State private var itemURL = ""
@@ -23,8 +25,14 @@ struct ItemRegistrationView: View {
     }
     @FocusState private var focusField: FocusField?
 
-    init(items: Binding<[DeskItem]>) {
+    init(items: Binding<[DeskItem]>, item: Binding<DeskItem>) {
         self._items = items
+        self._item = item
+
+        // 編集時にデフォルトの値を入れたい
+        _itemName = State(initialValue: self.item.title)
+        _itemMemo = State(initialValue: self.item.memo ?? "")
+        _itemURL = State(initialValue: self.item.url ?? "")
 
         UITextView.appearance().textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
     }
@@ -55,19 +63,34 @@ struct ItemRegistrationView: View {
                                         .scaledToFill()
                                         .frame(width: UIScreen.main.bounds.width, height: 250)
                                         .clipped()
+                                }.onAppear {
+                                    selectedImage = uiImage
                                 }
                             } else {
                                 ZStack {
-                                    Rectangle()
-                                        .foregroundColor(.matteBlack)
-                                        .frame(width: UIScreen.main.bounds.width, height: 250)
-                                    
-                                    Image(systemName: "photo")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundColor(.gray)
-                                        .frame(width: 30)
-                                    
+                                    // フォトライブラリから画像を選択していない初期状態で、デフォルトの画像があった場合は、そちらを上に表示する
+                                    if let selectedImage {
+                                        Image(uiImage: selectedImage)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: UIScreen.main.bounds.width, height: 250)
+                                            .clipped()
+                                    } else {
+                                        Rectangle()
+                                            .foregroundColor(.matteBlack)
+                                            .frame(width: UIScreen.main.bounds.width, height: 250)
+                                        
+                                        Image(systemName: "photo")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .foregroundColor(.gray)
+                                            .frame(width: 30)
+                                    }
+                                }.onAppear {
+                                    // 編集の場合は、元々あった画像を取得する
+                                    if let cachedImage = ImageManager.shared.getImage(name: item.id) {
+                                        selectedImage = cachedImage
+                                    }
                                 }
                             }
                         }
@@ -101,7 +124,7 @@ struct ItemRegistrationView: View {
                         .padding(.trailing, 16)
                         
                         TextEditor(text: $itemMemo)
-                            .scrollContentBackground(.hidden) // TextViewのデフォルト背景色を消したい(iOS16以降)
+                            .scrollContentBackground(.hidden)
                             .background(Color.matteBlack)
                             .foregroundColor(.white)
                             .frame(width: UIScreen.main.bounds.width - 32, height: 200)
@@ -120,17 +143,32 @@ struct ItemRegistrationView: View {
                             .modifier(SimpleTextField())
                             .focused($focusField, equals: .url)
 
-                        Button(action: {
-                            addNewItemToRealm()
-                            dismiss()
-                        }) {
-                          Text("アイテムを追加")
-                            .frame(width: UIScreen.main.bounds.width - 32, height: 44)
-                            .foregroundColor(Color.white)
-                            .background(itemName.isEmpty ? .gray : .blue)
+                        // MARK: FIX ME: idが存在しない場合は新規追加。作りがあまり良くないので、後で直す
+                        if item.id.isEmpty {
+                            Button(action: {
+                                addNewItemToRealm()
+                                dismiss()
+                            }) {
+                                Text("アイテムを追加")
+                                    .frame(width: UIScreen.main.bounds.width - 32, height: 44)
+                                    .foregroundColor(Color.white)
+                                    .background(itemName.isEmpty ? .gray : .blue)
+                            }
+                            .padding(.bottom, 144)
+                            .disabled(itemName.isEmpty)
+                        } else {
+                            Button(action: {
+                                updateItemToRealm()
+                                dismiss()
+                            }) {
+                                Text("アイテムを更新")
+                                    .frame(width: UIScreen.main.bounds.width - 32, height: 44)
+                                    .foregroundColor(Color.white)
+                                    .background(itemName.isEmpty ? .gray : .blue)
+                            }
+                            .padding(.bottom, 144)
+                            .disabled(itemName.isEmpty)
                         }
-                        .padding(.bottom, 144)
-                        .disabled(itemName.isEmpty)
                     }
                 }
                 .toolbar() {
@@ -141,7 +179,7 @@ struct ItemRegistrationView: View {
                         }
                     }
                 }
-            } 
+            }
         }
     }
     
@@ -166,7 +204,7 @@ struct ItemRegistrationView: View {
         
         // 新規アイテムを保存
         let realm = try! Realm()
-        
+
         try! realm.write {
           realm.add(newItem)
         }
@@ -175,12 +213,45 @@ struct ItemRegistrationView: View {
         let cachedItemList = realm.objects(DeskItem.self)
         items = Array(cachedItemList.filter("isWishList == false")) // 所持しているアイテムのみを抽出
     }
+    
+    // アイテムの更新
+    private func updateItemToRealm() {
+        // 画像の上書き処理。更新されていた場合のみ上書き保存すれば良い
+        if
+            let selectedImageData,
+            let newImage = UIImage(data: selectedImageData)
+        {
+            ImageManager.shared.writeImage(name: item.id, uiImage: newImage)
+        }
+
+        let realm = try! Realm()
+
+        // Realmから今回更新したいIDと一致するアイテムを探して更新
+        if let targetItem = realm.objects(DeskItem.self).filter("id == '\(item.id)'").first {
+            try! realm.write {
+                targetItem.title = itemName
+                targetItem.memo = itemMemo
+                targetItem.url = itemURL
+
+                // アイテムを更新し、詳細画面を更新する
+                item.title = itemName
+                item.memo = itemMemo
+                item.url = itemURL
+            }
+        }
+        // 更新するアイテムが見つからなかった時の処理...
+
+        // 最新のアイテムを取得し、ホーム画面にも反映させる
+        let cachedItemList = realm.objects(DeskItem.self)
+        items = Array(cachedItemList.filter("isWishList == false")) // 所持しているアイテムのみを抽出
+    }
 }
 
 struct ItemRegistrationView_Previews: PreviewProvider {
     @State private static var sampleItemList = [DeskItemFixture.sampleItem()]
+    @State private static var emptyItem: DeskItem = DeskItemFixture.emptyItem()
     
     static var previews: some View {
-        ItemRegistrationView(items: $sampleItemList)
+        ItemRegistrationView(items: $sampleItemList, item: $emptyItem)
     }
 }

@@ -12,6 +12,8 @@ struct ItemView: View {
     @State private var items: [DeskItem]
     @State private var isNextPresented = false
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
+    
+    @State private var emptyItem: DeskItem = DeskItemFixture.emptyItem()
 
     init() {
         let realm = try! Realm()
@@ -34,7 +36,8 @@ struct ItemView: View {
                         .roundButton()
                 }
                 .sheet(isPresented: $isNextPresented) {
-                    ItemRegistrationView(items: $items)
+                    // アイテムを新規追加する為、ベースとなるアイテムは指定しない
+                    ItemRegistrationView(items: $items, item: $emptyItem)
                 }
                 .padding(.trailing, 16)
             }

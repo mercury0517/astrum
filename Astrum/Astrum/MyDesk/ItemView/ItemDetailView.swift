@@ -9,15 +9,16 @@ import SwiftUI
 import RealmSwift
 
 struct ItemDetailView: View {
-    private let item: DeskItem
+    @State private var item: DeskItem
     private let itemImage: UIImage?
     @Binding private var items: [DeskItem]
 
     @State private var showingAlert = false
+    @State private var isPresentEditView = false
     @Environment(\.dismiss) var dismiss
-    
-    init(item: DeskItem, itemImage: UIImage?, items: Binding<[DeskItem]>) {
-        self.item = item
+
+    init(item: State<DeskItem>, itemImage: UIImage?, items: Binding<[DeskItem]>) {
+        self._item = item
         self.itemImage = itemImage
         self._items = items
     }
@@ -72,6 +73,12 @@ struct ItemDetailView: View {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Menu {
                                 Button(
+                                    "アイテムを編集",
+                                    role: .none,
+                                    action: { isPresentEditView = true }
+                                )
+
+                                Button(
                                     "アイテムを削除",
                                     role: .destructive,
                                     action: { showingAlert = true }
@@ -81,6 +88,9 @@ struct ItemDetailView: View {
                                     .roundButton()
                             }
                         }
+                    }
+                    .sheet(isPresented: $isPresentEditView) {
+                        ItemRegistrationView(items: $items, item: $item)
                     }
                     .alert("このアイテムを削除しますか？", isPresented: $showingAlert) {
                         Button("キャンセル", role: .cancel, action: {})
@@ -115,11 +125,12 @@ struct ItemDetailView: View {
 }
 
 struct ItemDetailView_Previews: PreviewProvider {
+    @State private static var sampleItem = DeskItemFixture.sampleItem()
     @State private static var sampleItemList = [DeskItemFixture.sampleItem()]
 
     static var previews: some View {
         ItemDetailView(
-            item: DeskItemFixture.sampleItem(),
+            item: _sampleItem,
             itemImage: UIImage(named: "sampleItem"),
             items: $sampleItemList
         )
