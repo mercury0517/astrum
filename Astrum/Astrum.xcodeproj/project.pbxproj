@@ -41,6 +41,7 @@
 		C3504CF82969262B00201DF7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C3504CF72969262B00201DF7 /* Realm */; };
 		C3504CFA2969262B00201DF7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C3504CF92969262B00201DF7 /* RealmSwift */; };
 		C3504CFD2969268D00201DF7 /* DeskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CFC2969268D00201DF7 /* DeskItem.swift */; };
+		C3504D01296BB02000201DF7 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D00296BB02000201DF7 /* NotificationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		C3504CF22961D1EA00201DF7 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C3504CF429641C1000201DF7 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		C3504CFC2969268D00201DF7 /* DeskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskItem.swift; sourceTree = "<group>"; };
+		C3504D00296BB02000201DF7 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			children = (
 				603AEC9A29042709008B396D /* ColorExtension.swift */,
 				C32BA6912940CA4E00E7D0D4 /* ImageExtension.swift */,
+				C3504D00296BB02000201DF7 /* NotificationExtension.swift */,
 				603AEC9C29042DEF008B396D /* ViewExtension.swift */,
 			);
 			path = Extension;
@@ -347,6 +350,7 @@
 				603AEC882903FDCC008B396D /* AstrumApp.swift in Sources */,
 				C314C964293C77040053868E /* HapticFeedbackManager.swift in Sources */,
 				C32BA68D2940C8F000E7D0D4 /* SectionTitle.swift in Sources */,
+				C3504D01296BB02000201DF7 /* NotificationExtension.swift in Sources */,
 				603AEC962903FE3B008B396D /* GlassCardView.swift in Sources */,
 				C314C95C293B7D360053868E /* DisplayScreenView.swift in Sources */,
 				C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */,

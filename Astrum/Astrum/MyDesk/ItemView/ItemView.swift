@@ -14,6 +14,7 @@ struct ItemView: View {
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
     
     @State private var emptyItem: DeskItem = DeskItemFixture.emptyItem()
+    @State private var emptyImage: UIImage? = nil
 
     init() {
         let realm = try! Realm()
@@ -37,7 +38,12 @@ struct ItemView: View {
                 }
                 .sheet(isPresented: $isNextPresented) {
                     // アイテムを新規追加する為、ベースとなるアイテムは指定しない
-                    ItemRegistrationView(items: $items, item: $emptyItem, isWishList: false)
+                    ItemRegistrationView(
+                        items: $items,
+                        item: $emptyItem,
+                        itemImage: $emptyImage,
+                        isWishList: false
+                    )
                 }
                 .padding(.trailing, 16)
             }
@@ -51,14 +57,25 @@ struct ItemView: View {
                 .padding(16)
             } else {
                 LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(items.indices, id: \.self) { index in
-                        ItemCellView(item: items[index], items: $items, isWishList: false, itemColor: congigDefaultItemColor(index: index))
+                    ForEach(Array(items.enumerated()), id: \.element) { index, element in
+                        ItemCellView(
+                            item: element,
+                            items: $items,
+                            isWishList: false,
+                            itemColor: congigDefaultItemColor(index: index)
+                        )
                     }
                 }
                 .padding(16)
             }
         }
         .padding(.bottom, 16)
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.updateItem)) { _ in
+            // 通知を受け取ったら最新の情報でアイテムを更新
+            let realm = try! Realm()
+            let cachedItemList = realm.objects(DeskItem.self)
+            items = Array(cachedItemList.filter("isWishList == false"))
+        }
     }
 
     // アイテムがある位置によってデフォルトカラーを4色から選ぶ

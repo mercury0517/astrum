@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class DeskItem: Object {
+class DeskItem: Object, Identifiable {
     @objc dynamic var id: String = ""
     @objc dynamic var title: String = ""
     @objc dynamic var memo: String?

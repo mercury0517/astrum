@@ -12,6 +12,7 @@ import SwiftUI
 struct ItemRegistrationView: View {
     @Binding private var items: [DeskItem]
     @Binding private var item: DeskItem // 編集時のみ、それ以外の場合は空のアイテムがセットされる
+    @Binding private var itemImage: UIImage?
     private var isWishList: Bool
 
     @State private var selectedItem: PhotosPickerItem? = nil
@@ -27,9 +28,10 @@ struct ItemRegistrationView: View {
     }
     @FocusState private var focusField: FocusField?
 
-    init(items: Binding<[DeskItem]>, item: Binding<DeskItem>, isWishList: Bool) {
+    init(items: Binding<[DeskItem]>, item: Binding<DeskItem>, itemImage: Binding<UIImage?>, isWishList: Bool) {
         self._items = items
         self._item = item
+        self._itemImage = itemImage
         self.isWishList = isWishList
 
         // 編集時にデフォルトの値を入れたい
@@ -222,14 +224,6 @@ struct ItemRegistrationView: View {
     
     // アイテムの更新
     private func updateItemToRealm() {
-        // 画像の上書き処理。更新されていた場合のみ上書き保存すれば良い
-        if
-            let selectedImageData,
-            let newImage = UIImage(data: selectedImageData)
-        {
-            ImageManager.shared.writeImage(name: item.id, uiImage: newImage)
-        }
-
         let realm = try! Realm()
 
         // Realmから今回更新したいIDと一致するアイテムを探して更新
@@ -243,6 +237,15 @@ struct ItemRegistrationView: View {
                 item.title = itemName
                 item.memo = itemMemo
                 item.url = itemURL
+                
+                // 画像の上書き処理。更新されていた場合のみ上書き保存すれば良い
+                if
+                    let selectedImageData,
+                    let newImage = UIImage(data: selectedImageData)
+                {
+                    ImageManager.shared.writeImage(name: item.id, uiImage: newImage)
+                    itemImage = newImage // 詳細画面の画像も更新する
+                }
             }
         }
         // 更新するアイテムが見つからなかった時の処理...
@@ -257,9 +260,15 @@ struct ItemRegistrationView: View {
 
 struct ItemRegistrationView_Previews: PreviewProvider {
     @State private static var sampleItemList = [DeskItemFixture.sampleItem()]
+    @State private static var sampleItemImage = UIImage(named: "sampleItem")
     @State private static var emptyItem: DeskItem = DeskItemFixture.emptyItem()
     
     static var previews: some View {
-        ItemRegistrationView(items: $sampleItemList, item: $emptyItem, isWishList: false)
+        ItemRegistrationView(
+            items: $sampleItemList,
+            item: $emptyItem,
+            itemImage: $sampleItemImage,
+            isWishList: false
+        )
     }
 }

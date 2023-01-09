@@ -14,6 +14,7 @@ struct WishListView: View {
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
 
     @State private var emptyItem: DeskItem = DeskItemFixture.emptyItem()
+    @State private var emptyImage: UIImage? = nil
 
     init() {
         let realm = try! Realm()
@@ -36,7 +37,12 @@ struct WishListView: View {
                         .roundButton()
                 }
                 .sheet(isPresented: $isNextPresented) {
-                    ItemRegistrationView(items: $items, item: $emptyItem, isWishList: true)
+                    ItemRegistrationView(
+                        items: $items,
+                        item: $emptyItem,
+                        itemImage: $emptyImage,
+                        isWishList: true
+                    )
                 }
                 .padding(.trailing, 16)
             }
@@ -50,8 +56,13 @@ struct WishListView: View {
                 .padding(16)
             } else {
                 LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(items.indices, id: \.self) { index in
-                        ItemCellView(item: items[index], items: $items, isWishList: true, itemColor: congigDefaultItemColor(index: index))
+                    ForEach(Array(items.enumerated()), id: \.element) { index, element in
+                        ItemCellView(
+                            item: element,
+                            items: $items,
+                            isWishList: true,
+                            itemColor: congigDefaultItemColor(index: index)
+                        )
                     }
                 }
                 .padding(16)

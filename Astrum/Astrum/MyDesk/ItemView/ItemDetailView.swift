@@ -10,23 +10,24 @@ import RealmSwift
 
 struct ItemDetailView: View {
     @State private var item: DeskItem
-    private let itemImage: UIImage?
+    @State private var itemImage: UIImage?
     @Binding private var items: [DeskItem]
     private let isWishList: Bool
     private let defaultImageColor: Color
 
-    @State private var showingAlert = false
     @State private var isPresentEditView = false
+    @State private var showingMoveToItemsAlert = false
+    @State private var showingAlert = false
     @Environment(\.dismiss) var dismiss
 
     init(item: State<DeskItem>,
-         itemImage: UIImage?,
+         itemImage: State<UIImage?>,
          items: Binding<[DeskItem]>,
          isWishList: Bool,
          defaultImageColor: Color
     ) {
         self._item = item
-        self.itemImage = itemImage
+        self._itemImage = itemImage
         self._items = items
         self.isWishList = isWishList
         self.defaultImageColor = defaultImageColor
@@ -95,6 +96,16 @@ struct ItemDetailView: View {
                                     action: { isPresentEditView = true }
                                 )
 
+                                if isWishList {
+                                    Button(
+                                        "アイテムを入手済みにする",
+                                        role: .none,
+                                        action: {
+                                            showingMoveToItemsAlert = true
+                                        }
+                                    )
+                                }
+
                                 Button(
                                     "アイテムを削除",
                                     role: .destructive,
@@ -107,7 +118,23 @@ struct ItemDetailView: View {
                         }
                     }
                     .sheet(isPresented: $isPresentEditView) {
-                        ItemRegistrationView(items: $items, item: $item, isWishList: isWishList)
+                        ItemRegistrationView(
+                            items: $items,
+                            item: $item,
+                            itemImage: $itemImage,
+                            isWishList: isWishList
+                        )
+                    }
+                    .alert("このアイテムをItemsに移動しますか？", isPresented: $showingMoveToItemsAlert) {
+                        Button("キャンセル", role: .cancel, action: {})
+
+                        Button("移動", role: .none) {
+                            changeItemCategory()
+                            HapticFeedbackManager.shared.play(.impact(.soft))
+
+                            // ホーム画面に戻る
+                            dismiss()
+                        }
                     }
                     .alert("このアイテムを削除しますか？", isPresented: $showingAlert) {
                         Button("キャンセル", role: .cancel, action: {})
@@ -141,16 +168,34 @@ struct ItemDetailView: View {
         let cachedItemList = realm.objects(DeskItem.self) // 削除後の最新のアイテムリスト
         items = Array(cachedItemList.filter("isWishList == \(isWishList)"))
     }
+    
+    private func changeItemCategory() {
+        let realm = try! Realm()
+        
+        if let targetItem = realm.objects(DeskItem.self).filter("id == '\(item.id)'").first {
+            try! realm.write {
+                targetItem.isWishList = false
+            }
+        }
+
+        // Wish Listを更新してホーム画面のアイテムが更新される様にする
+        let cachedItemList = realm.objects(DeskItem.self)
+        items = Array(cachedItemList.filter("isWishList == true"))
+
+        // 通知を送信して、Itemsの更新をかける
+        NotificationCenter.default.post(name: NSNotification.updateItem, object: self, userInfo: nil)
+    }
 }
 
 struct ItemDetailView_Previews: PreviewProvider {
     @State private static var sampleItem = DeskItemFixture.sampleItem()
+    @State private static var sampleImage = UIImage(named: "sampleItem")
     @State private static var sampleItemList = [DeskItemFixture.sampleItem()]
 
     static var previews: some View {
         ItemDetailView(
             item: _sampleItem,
-            itemImage: UIImage(named: "sampleItem"),
+            itemImage: _sampleImage,
             items: $sampleItemList,
             isWishList: false,
             defaultImageColor: .blue

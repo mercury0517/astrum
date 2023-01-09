@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ItemCellView: View {
     @State private var item: DeskItem
-    private let itemImage: UIImage?
+    @State private var itemImage: UIImage?
     private let isWishList: Bool
     private let itemColor: Color
 
@@ -30,7 +30,7 @@ struct ItemCellView: View {
         NavigationLink {
             ItemDetailView(
                 item: _item,
-                itemImage: itemImage,
+                itemImage: _itemImage,
                 items: $items,
                 isWishList: isWishList,
                 defaultImageColor: itemColor
