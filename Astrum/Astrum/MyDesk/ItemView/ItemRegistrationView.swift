@@ -12,6 +12,8 @@ import SwiftUI
 struct ItemRegistrationView: View {
     @Binding private var items: [DeskItem]
     @Binding private var item: DeskItem // 編集時のみ、それ以外の場合は空のアイテムがセットされる
+    private var isWishList: Bool
+
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
     @State private var selectedImage: UIImage? = nil
@@ -25,9 +27,10 @@ struct ItemRegistrationView: View {
     }
     @FocusState private var focusField: FocusField?
 
-    init(items: Binding<[DeskItem]>, item: Binding<DeskItem>) {
+    init(items: Binding<[DeskItem]>, item: Binding<DeskItem>, isWishList: Bool) {
         self._items = items
         self._item = item
+        self.isWishList = isWishList
 
         // 編集時にデフォルトの値を入れたい
         _itemName = State(initialValue: self.item.title)
@@ -171,12 +174,12 @@ struct ItemRegistrationView: View {
                         }
                     }
                 }
-                .toolbar() {
-                    ToolbarItemGroup(placement: .keyboard) {
-                        Spacer()
-                        Button("完了") {
-                            focusField = nil // キーボードからフォーカスを外す
-                        }
+            }
+            .toolbar() {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("完了") {
+                        focusField = nil // キーボードからフォーカスを外す
                     }
                 }
             }
@@ -200,18 +203,19 @@ struct ItemRegistrationView: View {
         newItem.title = itemName
         newItem.memo = itemMemo
         newItem.url = itemURL
-        newItem.isWishList = false // 所持しているアイテムとして追加
-        
+        newItem.isWishList = isWishList // 遷移元によって処理を分岐させ、表示するリストを分ける
+
         // 新規アイテムを保存
         let realm = try! Realm()
 
         try! realm.write {
           realm.add(newItem)
         }
-        
+
+        let latestItemList = realm.objects(DeskItem.self)
+
         // 最新のアイテムを取得し、ホーム画面にも反映させる
-        let cachedItemList = realm.objects(DeskItem.self)
-        items = Array(cachedItemList.filter("isWishList == false")) // 所持しているアイテムのみを抽出
+        items = Array(latestItemList.filter("isWishList == \(isWishList)"))
 
         HapticFeedbackManager.shared.play(.impact(.soft))
     }
@@ -245,7 +249,7 @@ struct ItemRegistrationView: View {
 
         // 最新のアイテムを取得し、ホーム画面にも反映させる
         let cachedItemList = realm.objects(DeskItem.self)
-        items = Array(cachedItemList.filter("isWishList == false")) // 所持しているアイテムのみを抽出
+        items = Array(cachedItemList.filter("isWishList == \(isWishList)")) // 所持しているアイテムのみを抽出
 
         HapticFeedbackManager.shared.play(.impact(.soft))
     }
@@ -256,6 +260,6 @@ struct ItemRegistrationView_Previews: PreviewProvider {
     @State private static var emptyItem: DeskItem = DeskItemFixture.emptyItem()
     
     static var previews: some View {
-        ItemRegistrationView(items: $sampleItemList, item: $emptyItem)
+        ItemRegistrationView(items: $sampleItemList, item: $emptyItem, isWishList: false)
     }
 }

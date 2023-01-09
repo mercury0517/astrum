@@ -37,17 +37,26 @@ struct ItemView: View {
                 }
                 .sheet(isPresented: $isNextPresented) {
                     // アイテムを新規追加する為、ベースとなるアイテムは指定しない
-                    ItemRegistrationView(items: $items, item: $emptyItem)
+                    ItemRegistrationView(items: $items, item: $emptyItem, isWishList: false)
                 }
                 .padding(.trailing, 16)
             }
 
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(items, id: \.id) { item in
-                    ItemCellView(item: item, items: $items)
+            if items.isEmpty {
+                HStack {
+                    Text("アイテムがまだありません。\n持っているアイテムを追加してみよう！")
+                        .foregroundColor(.white)
+                    Spacer()
                 }
+                .padding(16)
+            } else {
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach(items, id: \.id) { item in
+                        ItemCellView(item: item, items: $items, isWishList: false)
+                    }
+                }
+                .padding(16)
             }
-            .padding(16)
         }
         .padding(.bottom, 16)
     }

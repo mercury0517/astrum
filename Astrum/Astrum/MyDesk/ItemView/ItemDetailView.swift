@@ -12,15 +12,17 @@ struct ItemDetailView: View {
     @State private var item: DeskItem
     private let itemImage: UIImage?
     @Binding private var items: [DeskItem]
+    private let isWishList: Bool
 
     @State private var showingAlert = false
     @State private var isPresentEditView = false
     @Environment(\.dismiss) var dismiss
 
-    init(item: State<DeskItem>, itemImage: UIImage?, items: Binding<[DeskItem]>) {
+    init(item: State<DeskItem>, itemImage: UIImage?, items: Binding<[DeskItem]>, isWishList: Bool) {
         self._item = item
         self.itemImage = itemImage
         self._items = items
+        self.isWishList = isWishList
     }
 
     var body: some View {
@@ -90,7 +92,7 @@ struct ItemDetailView: View {
                         }
                     }
                     .sheet(isPresented: $isPresentEditView) {
-                        ItemRegistrationView(items: $items, item: $item)
+                        ItemRegistrationView(items: $items, item: $item, isWishList: isWishList)
                     }
                     .alert("このアイテムを削除しますか？", isPresented: $showingAlert) {
                         Button("キャンセル", role: .cancel, action: {})
@@ -122,7 +124,7 @@ struct ItemDetailView: View {
 
         // itemsも更新してホーム画面のアイテムが更新される様にする
         let cachedItemList = realm.objects(DeskItem.self) // 削除後の最新のアイテムリスト
-        items = Array(cachedItemList.filter("isWishList == false"))
+        items = Array(cachedItemList.filter("isWishList == \(isWishList)"))
     }
 }
 
@@ -134,7 +136,8 @@ struct ItemDetailView_Previews: PreviewProvider {
         ItemDetailView(
             item: _sampleItem,
             itemImage: UIImage(named: "sampleItem"),
-            items: $sampleItemList
+            items: $sampleItemList,
+            isWishList: false
         )
     }
 }
