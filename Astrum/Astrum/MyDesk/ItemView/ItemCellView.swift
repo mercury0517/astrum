@@ -11,23 +11,29 @@ struct ItemCellView: View {
     @State private var item: DeskItem
     private let itemImage: UIImage?
     private let isWishList: Bool
+    private let itemColor: Color
 
     private let itemSize = (UIScreen.main.bounds.width - 80) / 4
 
     @Binding private var items: [DeskItem] // アイテムに変更を加えた場合に、ホーム画面のアイテム一覧も更新したい
 
-    init(item: DeskItem, items: Binding<[DeskItem]>, isWishList: Bool) {
+    init(item: DeskItem, items: Binding<[DeskItem]>, isWishList: Bool, itemColor: Color) {
         self.item = item
         self.itemImage = ImageManager.shared.getImage(name: item.id)
 
         self._items = items
         self.isWishList = isWishList
+        self.itemColor = itemColor
     }
 
     var body: some View {
         NavigationLink {
             ItemDetailView(
-                item: _item, itemImage: itemImage, items: $items, isWishList: isWishList
+                item: _item,
+                itemImage: itemImage,
+                items: $items,
+                isWishList: isWishList,
+                defaultImageColor: itemColor
             )
         } label: {
             if let cellImage = itemImage {
@@ -35,13 +41,21 @@ struct ItemCellView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: itemSize, height: itemSize)
-                    .background(Color.white)
+                    .background(itemColor)
                     .cornerRadius(8)
             } else {
-                Rectangle()
-                    .frame(width: itemSize, height: itemSize)
-                    .background(Color.orange)
-                    .cornerRadius(8)
+                ZStack {
+                    Rectangle()
+                        .frame(width: itemSize, height: itemSize)
+                        .foregroundColor(itemColor)
+                        .cornerRadius(8)
+
+                    Image(systemName: "shippingbox")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.white)
+                        .frame(width: 30)
+                }
             }
         }
     }
@@ -54,7 +68,8 @@ struct ItemCellVIew_Previews: PreviewProvider {
         ItemCellView(
             item: DeskItemFixture.sampleItem(),
             items: $sampleItemList,
-            isWishList: false
+            isWishList: false,
+            itemColor: .orange
         )
     }
 }

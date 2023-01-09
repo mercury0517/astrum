@@ -13,16 +13,23 @@ struct ItemDetailView: View {
     private let itemImage: UIImage?
     @Binding private var items: [DeskItem]
     private let isWishList: Bool
+    private let defaultImageColor: Color
 
     @State private var showingAlert = false
     @State private var isPresentEditView = false
     @Environment(\.dismiss) var dismiss
 
-    init(item: State<DeskItem>, itemImage: UIImage?, items: Binding<[DeskItem]>, isWishList: Bool) {
+    init(item: State<DeskItem>,
+         itemImage: UIImage?,
+         items: Binding<[DeskItem]>,
+         isWishList: Bool,
+         defaultImageColor: Color
+    ) {
         self._item = item
         self.itemImage = itemImage
         self._items = items
         self.isWishList = isWishList
+        self.defaultImageColor = defaultImageColor
     }
 
     var body: some View {
@@ -40,9 +47,17 @@ struct ItemDetailView: View {
                                 .frame(width: UIScreen.main.bounds.width, height: 250)
                                 .clipped()
                         } else {
-                            Rectangle()
-                                .frame(width: UIScreen.main.bounds.width, height: 250)
-                                .background(.gray)
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: UIScreen.main.bounds.width, height: 250)
+                                    .foregroundColor(defaultImageColor)
+                                
+                                Image(systemName: "shippingbox")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundColor(.white)
+                                    .frame(width: 30)
+                            }
                         }
 
                         Text(item.title)
@@ -137,7 +152,8 @@ struct ItemDetailView_Previews: PreviewProvider {
             item: _sampleItem,
             itemImage: UIImage(named: "sampleItem"),
             items: $sampleItemList,
-            isWishList: false
+            isWishList: false,
+            defaultImageColor: .blue
         )
     }
 }

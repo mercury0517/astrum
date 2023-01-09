@@ -50,14 +50,27 @@ struct WishListView: View {
                 .padding(16)
             } else {
                 LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(items, id: \.id) { item in
-                        ItemCellView(item: item, items: $items, isWishList: true)
+                    ForEach(items.indices, id: \.self) { index in
+                        ItemCellView(item: items[index], items: $items, isWishList: true, itemColor: congigDefaultItemColor(index: index))
                     }
                 }
                 .padding(16)
             }
         }
         .padding(.bottom, 16)
+    }
+    
+    // アイテムがある位置によってデフォルトカラーを4色から選ぶ
+    private func congigDefaultItemColor(index: Int) -> Color {
+        // 4で割った余りで色を決める
+        let itemColorType = index % 4
+        
+        // indexTypeが3以上になることは想定していないが、grayを返しておく
+        if itemColorType > 3 { return .gray }
+
+        let colors: [Color] = [.orange, .red, .purple, .blue]
+
+        return colors[itemColorType]
     }
 }
 
