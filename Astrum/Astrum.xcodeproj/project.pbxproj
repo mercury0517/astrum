@@ -42,6 +42,7 @@
 		C3504CFA2969262B00201DF7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C3504CF92969262B00201DF7 /* RealmSwift */; };
 		C3504CFD2969268D00201DF7 /* DeskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CFC2969268D00201DF7 /* DeskItem.swift */; };
 		C3504D01296BB02000201DF7 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D00296BB02000201DF7 /* NotificationExtension.swift */; };
+		C3504D03296BEF7F00201DF7 /* SetupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		C3504CF429641C1000201DF7 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		C3504CFC2969268D00201DF7 /* DeskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskItem.swift; sourceTree = "<group>"; };
 		C3504D00296BB02000201DF7 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				C3504CEF2961CBD500201DF7 /* SetupCellView.swift */,
+				C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */,
 				C3504CED2961CA5000201DF7 /* SetupView.swift */,
 			);
 			path = SetupView;
@@ -370,6 +373,7 @@
 				C3504CF02961CBD500201DF7 /* SetupCellView.swift in Sources */,
 				60235CED292CF22E0086CC3D /* MyDeskView.swift in Sources */,
 				C32BA69B29449EAE00E7D0D4 /* BackgroundView.swift in Sources */,
+				C3504D03296BEF7F00201DF7 /* SetupDetailView.swift in Sources */,
 				C3504CEE2961CA5000201DF7 /* SetupView.swift in Sources */,
 				C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */,
 			);

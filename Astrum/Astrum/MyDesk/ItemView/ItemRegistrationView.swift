@@ -159,6 +159,7 @@ struct ItemRegistrationView: View {
                                     .foregroundColor(Color.white)
                                     .background(itemName.isEmpty ? .gray : .blue)
                             }
+                            .cornerRadius(8)
                             .padding(.bottom, 144)
                             .disabled(itemName.isEmpty)
                         } else {
@@ -171,6 +172,7 @@ struct ItemRegistrationView: View {
                                     .foregroundColor(Color.white)
                                     .background(itemName.isEmpty ? .gray : .blue)
                             }
+                            .cornerRadius(8)
                             .padding(.bottom, 144)
                             .disabled(itemName.isEmpty)
                         }

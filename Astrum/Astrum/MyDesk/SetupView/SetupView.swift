@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SetupView: View {
-    @State private var isNextPresented = false
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
 
     var body: some View {
@@ -18,17 +17,6 @@ struct SetupView: View {
                     .modifier(SectionTitle())
                 
                 Spacer()
-
-                Button(action: {
-                    isNextPresented.toggle()
-                }) {
-                    Image(systemName: "questionmark.circle")
-                        .roundButton()
-                }
-                .sheet(isPresented: $isNextPresented) {
-//                    ItemRegistrationView()
-                }
-                .padding(.trailing, 16)
             }
 
             LazyVGrid(columns: columns, spacing: 16) {

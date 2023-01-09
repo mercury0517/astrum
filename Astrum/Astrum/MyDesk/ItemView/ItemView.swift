@@ -12,7 +12,7 @@ struct ItemView: View {
     @State private var items: [DeskItem]
     @State private var isNextPresented = false
     private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 16, alignment: .center), count: 4)
-    
+
     @State private var emptyItem: DeskItem = DeskItemFixture.emptyItem()
     @State private var emptyImage: UIImage? = nil
 

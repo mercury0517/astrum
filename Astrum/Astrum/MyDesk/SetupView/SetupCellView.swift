@@ -17,7 +17,7 @@ struct SetupCellView: View {
     
     var body: some View {
         NavigationLink {
-            // 遷移先を設定する
+            SetupDetailView()
         } label: {
             ZStack {
                 Circle()

@@ -20,11 +20,12 @@ struct ItemDetailView: View {
     @State private var showingAlert = false
     @Environment(\.dismiss) var dismiss
 
-    init(item: State<DeskItem>,
-         itemImage: State<UIImage?>,
-         items: Binding<[DeskItem]>,
-         isWishList: Bool,
-         defaultImageColor: Color
+    init(
+        item: State<DeskItem>,
+        itemImage: State<UIImage?>,
+        items: Binding<[DeskItem]>,
+        isWishList: Bool,
+        defaultImageColor: Color
     ) {
         self._item = item
         self._itemImage = itemImage
@@ -45,12 +46,12 @@ struct ItemDetailView: View {
                             Image(uiImage: itemImage)
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: UIScreen.main.bounds.width, height: 250)
+                                .frame(width: UIScreen.main.bounds.width, height: 300)
                                 .clipped()
                         } else {
                             ZStack {
                                 Rectangle()
-                                    .frame(width: UIScreen.main.bounds.width, height: 250)
+                                    .frame(width: UIScreen.main.bounds.width, height: 300)
                                     .foregroundColor(defaultImageColor)
                                 
                                 Image(systemName: "shippingbox")
