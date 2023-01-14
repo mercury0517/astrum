@@ -32,8 +32,9 @@ struct SetupSelectItemView: View {
         NavigationStack {        
             List(selection: $selectedValue) {
                 ForEach(items, id: \.self) { item in
-                    SelectItemLabel()
+                    SelectItemLabel(itemName: item.title, itemImage: ImageManager.shared.getImage(name: item.id))
                         .listRowInsets(EdgeInsets())
+                        .listRowBackground(Color.matteBlack)
                 }
             }
             .listStyle(.plain)

@@ -8,26 +8,38 @@
 import SwiftUI
 
 struct SelectItemLabel: View {
+    let itemName: String
+    let itemImage: UIImage?
+    
     var body: some View {
         HStack(spacing: 0) {
-            Text("Apple Studio Display")
+            Text(itemName)
                 .font(Font.system(size: 16))
                 .fontWeight(.semibold)
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .padding(.leading, 16)
 
             Spacer()
 
-            ZStack {
-                Rectangle()
-                    .frame(width: 60, height: 60)
-                    .foregroundColor(.white)
-
-                Image("sampleItem")
+            if let cellImage = itemImage {
+                Image(uiImage: cellImage)
                     .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.white)
-                    .frame(width: 60)
+                    .scaledToFill()
+                    .frame(width: 60, height: 60)
+                    .background(.white)
+                    .clipped()
+            } else {
+                ZStack {
+                    Rectangle()
+                        .frame(width: 60, height: 60)
+                        .foregroundColor(.blue)
+
+                    Image(systemName: "shippingbox")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.white)
+                        .frame(width: 30)
+                }
             }
         }
     }
@@ -37,8 +49,8 @@ struct SelectItemLabel_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             BackgroundView()
-            
-            SelectItemLabel()
+
+            SelectItemLabel(itemName: "Apple Studio Display", itemImage: UIImage(named: "sampleItem"))
         }
     }
 }
