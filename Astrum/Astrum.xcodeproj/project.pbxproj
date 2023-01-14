@@ -203,7 +203,6 @@
 			children = (
 				C3504CE12960117000201DF7 /* ItemCellView.swift */,
 				C314C969293CB4700053868E /* ItemDetailView.swift */,
-				C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */,
 				C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */,
 				C314C967293CB3D80053868E /* ItemView.swift */,
 			);
@@ -246,9 +245,10 @@
 		C3504CEC2961CA3100201DF7 /* SetupView */ = {
 			isa = PBXGroup;
 			children = (
-				C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */,
+				C32BA69729435B4D00E7D0D4 /* ItemLabel.swift */,
 				C3504CEF2961CBD500201DF7 /* SetupCellView.swift */,
 				C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */,
+				C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */,
 				C3504CED2961CA5000201DF7 /* SetupView.swift */,
 			);
 			path = SetupView;

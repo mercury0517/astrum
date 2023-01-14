@@ -33,7 +33,8 @@ struct SetupSelectItemView: View {
         NavigationStack {        
             List(selection: $selectedValue) {
                 ForEach(items, id: \.id) { item in
-                    ItemLabel()
+                    SelectItemLabel()
+                        .listRowInsets(EdgeInsets())
                 }
             }
             .scrollContentBackground(.hidden)
