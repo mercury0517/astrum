@@ -9,8 +9,7 @@ import RealmSwift
 import SwiftUI
 
 struct SetupSelectItemView: View {
-    private let items: [DeskItem]
-    
+    @State private var items: [DeskItem]
     @State private var selectedValue: Set<DeskItem> = []
     
     init() {
@@ -32,11 +31,12 @@ struct SetupSelectItemView: View {
     var body: some View {
         NavigationStack {        
             List(selection: $selectedValue) {
-                ForEach(items, id: \.id) { item in
+                ForEach(items, id: \.self) { item in
                     SelectItemLabel()
                         .listRowInsets(EdgeInsets())
                 }
             }
+            .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .background(.black)
             .environment(\.editMode, .constant(.active))

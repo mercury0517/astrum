@@ -10,22 +10,26 @@ import SwiftUI
 struct SelectItemLabel: View {
     var body: some View {
         HStack(spacing: 0) {
-            Image("sampleItem")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 80, height: 80)
-                .background(Color.white)
-                
             Text("Apple Studio Display")
                 .font(Font.system(size: 16))
                 .fontWeight(.semibold)
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .padding(.leading, 16)
-            
+
             Spacer()
+
+            ZStack {
+                Rectangle()
+                    .frame(width: 60, height: 60)
+                    .foregroundColor(.white)
+
+                Image("sampleItem")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.white)
+                    .frame(width: 60)
+            }
         }
-        .background(Color.matteBlack)
-        .border(width: 0.25, edges: [.bottom], color: Color.gray)
     }
 }
 
