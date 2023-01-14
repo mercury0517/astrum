@@ -17,7 +17,7 @@ struct SetupCellView: View {
     
     var body: some View {
         NavigationLink {
-            SetupDetailView()
+            SetupDetailView(itemColor: itemColor)
         } label: {
             ZStack {
                 Circle()

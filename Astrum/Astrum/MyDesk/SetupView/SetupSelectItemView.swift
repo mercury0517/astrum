@@ -9,9 +9,11 @@ import RealmSwift
 import SwiftUI
 
 struct SetupSelectItemView: View {
-    @State private var items: [DeskItem]
+    private var items: [DeskItem]
     @State private var selectedValue: Set<DeskItem> = []
-    
+
+    @Environment(\.dismiss) private var dismiss
+
     init() {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithDefaultBackground()
@@ -29,18 +31,33 @@ struct SetupSelectItemView: View {
     }
 
     var body: some View {
-        NavigationStack {        
-            List(selection: $selectedValue) {
-                ForEach(items, id: \.self) { item in
-                    SelectItemLabel(itemName: item.title, itemImage: ImageManager.shared.getImage(name: item.id))
-                        .listRowInsets(EdgeInsets())
-                        .listRowBackground(Color.matteBlack)
+        NavigationStack {
+            VStack(spacing: 8) {
+                List(selection: $selectedValue) {
+                    ForEach(items, id: \.self) { item in
+                        SelectItemLabel(itemName: item.title, itemImage: ImageManager.shared.getImage(name: item.id))
+                            .listRowInsets(EdgeInsets())
+                            .listRowBackground(Color.matteBlack)
+                    }
                 }
+                .listStyle(.plain)
+                .scrollContentBackground(.hidden)
+                .background(.black)
+                .environment(\.editMode, .constant(.active))
+                
+                Button(action: {
+                    dismiss()
+                }) {
+                    Text("セットアップの作成")
+                        .frame(width: UIScreen.main.bounds.width - 32, height: 44)
+                        .foregroundColor(Color.white)
+                        .background(selectedValue.count == 0 ? .gray : .blue)
+                }
+                .cornerRadius(8)
+                .disabled(selectedValue.count == 0)
+                
+                Spacer()
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
-            .background(.black)
-            .environment(\.editMode, .constant(.active))
             .navigationTitle("アイテムの選択")
             .navigationBarTitleDisplayMode(.inline)
         }

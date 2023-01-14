@@ -8,7 +8,14 @@
 import SwiftUI
 
 struct SetupDetailView: View {
+    let itemColor: Color
     @State private var isAddSetupViewPresented = false
+    @State private var items: [DeskItem]
+
+    init(itemColor: Color) {
+        self.itemColor = itemColor
+        self.items = []
+    }
 
     var body: some View {
         ZStack {
@@ -40,6 +47,6 @@ struct SetupDetailView: View {
 
 struct SetupDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SetupDetailView()
+        SetupDetailView(itemColor: .orange)
     }
 }
