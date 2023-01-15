@@ -57,7 +57,7 @@ struct SetupDetailView: View {
                             .foregroundColor(.blue)
                             .padding(.leading, 4)
                     }
-                    .alert("タイトルを入力", isPresented: $showingTitleAlert) {
+                    .alert("タイトルを編集", isPresented: $showingTitleAlert) {
                         TextField("", text: $title)
                         
                         Button("キャンセル", action: {})
@@ -66,7 +66,6 @@ struct SetupDetailView: View {
 
                     Spacer()
                 }
-                .padding(.bottom, 16)
 
                 // アイテムがない時はこちらを表示する
                 if items.isEmpty {
