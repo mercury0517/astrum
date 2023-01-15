@@ -44,6 +44,7 @@
 		C3504D01296BB02000201DF7 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D00296BB02000201DF7 /* NotificationExtension.swift */; };
 		C3504D03296BEF7F00201DF7 /* SetupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */; };
 		C3504D05296D4DE800201DF7 /* SetupSelectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */; };
+		C3BD4D4229739A61009F577E /* SetUpItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4D4129739A61009F577E /* SetUpItemLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		C3504D00296BB02000201DF7 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDetailView.swift; sourceTree = "<group>"; };
 		C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSelectItemView.swift; sourceTree = "<group>"; };
+		C3BD4D4129739A61009F577E /* SetUpItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpItemLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 				C32BA69729435B4D00E7D0D4 /* SelectItemLabel.swift */,
 				C3504CEF2961CBD500201DF7 /* SetupCellView.swift */,
 				C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */,
+				C3BD4D4129739A61009F577E /* SetUpItemLabel.swift */,
 				C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */,
 				C3504CED2961CA5000201DF7 /* SetupView.swift */,
 			);
@@ -364,6 +367,7 @@
 				C3504CF32961D1EA00201DF7 /* WishListView.swift in Sources */,
 				C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */,
 				C32BA6A029458A0400E7D0D4 /* FavoritesView.swift in Sources */,
+				C3BD4D4229739A61009F577E /* SetUpItemLabel.swift in Sources */,
 				C3504CEB296124C700201DF7 /* SimpleTextField.swift in Sources */,
 				C3504CFD2969268D00201DF7 /* DeskItem.swift in Sources */,
 				603AEC9B29042709008B396D /* ColorExtension.swift in Sources */,

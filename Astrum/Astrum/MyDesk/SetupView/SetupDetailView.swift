@@ -60,9 +60,9 @@ struct SetupDetailView: View {
                         Spacer()
                     }
                 } else {
-                    VStack {
+                    VStack(spacing: 16) {
                         ForEach(items, id: \.self) { item in
-                            SelectItemLabel(itemName: item.title, itemImage: ImageManager.shared.getImage(name: item.id))
+                            SetUpItemLabel(itemName: item.title, itemImage: ImageManager.shared.getImage(name: item.id))
                         }
                     }
                 }
@@ -91,9 +91,26 @@ struct SetupDetailView: View {
                     // キャッシュと現在表示している画面の更新
                     UserDefaults.standard.removeObject(forKey: "setups_\(self.itemColor)")
                     items = []
-                    
+
                     HapticFeedbackManager.shared.play(.impact(.soft))
                 }
+            }
+        }.onAppear {
+            if let itemIDList = UserDefaults.standard.array(forKey: "setups_\(self.itemColor)") as? [String] {
+                let realm = try! Realm()
+                let cachedItemList = Array(realm.objects(DeskItem.self))
+                var setUpItemList: [DeskItem] = []
+
+                for id in itemIDList {
+                    for item in cachedItemList {
+                        if id == item.id {
+                            setUpItemList.append(item)
+                        }
+                    }
+                }
+                self.items = setUpItemList
+            } else {
+                self.items = []
             }
         }
     }
