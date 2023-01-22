@@ -45,6 +45,7 @@
 		C3504D03296BEF7F00201DF7 /* SetupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */; };
 		C3504D05296D4DE800201DF7 /* SetupSelectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */; };
 		C3BD4D4229739A61009F577E /* SetUpItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4D4129739A61009F577E /* SetUpItemLabel.swift */; };
+		C3BD4D44297CD8EE009F577E /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4D43297CD8EE009F577E /* LaunchScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDetailView.swift; sourceTree = "<group>"; };
 		C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSelectItemView.swift; sourceTree = "<group>"; };
 		C3BD4D4129739A61009F577E /* SetUpItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpItemLabel.swift; sourceTree = "<group>"; };
+		C3BD4D43297CD8EE009F577E /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				C32BA69E294589D700E7D0D4 /* Favorites */,
 				603AEC952903FE3B008B396D /* GlassCardView.swift */,
 				C3504CE92960217F00201DF7 /* Info.plist */,
+				C3BD4D43297CD8EE009F577E /* LaunchScreen.swift */,
 				C32BA6932942034700E7D0D4 /* MyDesk */,
 				603AEC8D2903FDCC008B396D /* Preview Content */,
 				C3504CE82960212100201DF7 /* Resouces */,
@@ -354,6 +357,7 @@
 			files = (
 				C314C95E293B7DFA0053868E /* DisplayFrameView.swift in Sources */,
 				603AEC8A2903FDCC008B396D /* ContentView.swift in Sources */,
+				C3BD4D44297CD8EE009F577E /* LaunchScreen.swift in Sources */,
 				C314C96A293CB4700053868E /* ItemDetailView.swift in Sources */,
 				C3504CE22960117000201DF7 /* ItemCellView.swift in Sources */,
 				603AEC882903FDCC008B396D /* AstrumApp.swift in Sources */,
