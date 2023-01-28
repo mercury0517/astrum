@@ -95,6 +95,7 @@ struct SetupDetailView: View {
                 }
             }
             .padding(16)
+            .padding(.bottom, 50)
             .toolbar {
                 if !items.isEmpty {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -130,6 +131,13 @@ struct SetupDetailView: View {
             }
             .sheet(isPresented: $isAddSetupViewPresented) {
                 SetupSelectItemView(itemColor: itemColor, setupItems: $items)
+            }
+
+            VStack(spacing: 0) {
+                Spacer()
+
+                AdMobBannerViewForSetup()
+                    .frame(width: 320, height: 50)
             }
         }.onAppear {
             self.title = UserDefaults.standard.object(forKey: "setup_title_\(self.itemColor)") as? String ?? "タイトル"

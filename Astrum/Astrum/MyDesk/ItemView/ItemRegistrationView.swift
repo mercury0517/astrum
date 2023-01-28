@@ -61,12 +61,12 @@ struct ItemRegistrationView: View {
                                 ZStack {
                                     Rectangle()
                                         .foregroundColor(.matteBlack)
-                                        .frame(width: UIScreen.main.bounds.width, height: 250)
+                                        .frame(width: UIScreen.main.bounds.width, height: 300)
                                     
                                     Image(uiImage: uiImage)
                                         .resizable()
                                         .scaledToFill()
-                                        .frame(width: UIScreen.main.bounds.width, height: 250)
+                                        .frame(width: UIScreen.main.bounds.width, height: 300)
                                         .clipped()
                                 }.onAppear {
                                     selectedImage = uiImage
@@ -78,12 +78,12 @@ struct ItemRegistrationView: View {
                                         Image(uiImage: selectedImage)
                                             .resizable()
                                             .scaledToFill()
-                                            .frame(width: UIScreen.main.bounds.width, height: 250)
+                                            .frame(width: UIScreen.main.bounds.width, height: 300)
                                             .clipped()
                                     } else {
                                         Rectangle()
                                             .foregroundColor(.matteBlack)
-                                            .frame(width: UIScreen.main.bounds.width, height: 250)
+                                            .frame(width: UIScreen.main.bounds.width, height: 300)
                                         
                                         Image(systemName: "photo")
                                             .resizable()
