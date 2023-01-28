@@ -5,9 +5,12 @@
 //  Created by 伊原明宏 on 2023/01/03.
 //
 
+import MessageUI
 import SwiftUI
 
 struct SettingView: View {
+    @State private var isShowingMailView = false
+
     init() {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithDefaultBackground()
@@ -25,9 +28,19 @@ struct SettingView: View {
                 Text("外観")
                     .listRowBackground(Color.matteBlack)
                     .foregroundColor(.white)
-                Text("問い合わせ")
+
+                Button(action: {
+                    self.isShowingMailView.toggle()
+                }) {
+                    Text("お問い合わせ・機能のご要望")
+                }
+                    .disabled(!MFMailComposeViewController.canSendMail())
+                    .sheet(isPresented: $isShowingMailView, content: {
+                        MailView(isShowing: self.$isShowingMailView)
+                    })
                     .listRowBackground(Color.matteBlack)
                     .foregroundColor(.white)
+
                 Text("利用規約")
                     .listRowBackground(Color.matteBlack)
                     .foregroundColor(.white)
