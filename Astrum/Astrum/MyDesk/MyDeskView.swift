@@ -32,7 +32,7 @@ struct MyDeskView: View {
         NavigationStack {
             ZStack{
                 BackgroundView()
-                
+
                 ScrollView(showsIndicators: true) {
                     VStack(spacing: 0) {
                         // モニターのエリア
@@ -49,13 +49,18 @@ struct MyDeskView: View {
 
                         SetupView()
                             .padding(.top, 24)
-                        
+
                         ItemView()
-                        
+
                         WishListView()
-                        
-                        Spacer()
                     }
+                }
+
+                VStack(spacing: 0) {
+                    Spacer()
+
+                    AdMobBannerView()
+                        .frame(width: 320, height: 50)
                 }
             }
             .navigationTitle("Astrum")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1443BADE8F7136BF04E0FB43 /* Pods_Astrum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B812DFE7002E5C7479E49015 /* Pods_Astrum.framework */; };
 		60235CED292CF22E0086CC3D /* MyDeskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60235CEC292CF22E0086CC3D /* MyDeskView.swift */; };
 		603AEC882903FDCC008B396D /* AstrumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEC872903FDCC008B396D /* AstrumApp.swift */; };
 		603AEC8A2903FDCC008B396D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEC892903FDCC008B396D /* ContentView.swift */; };
@@ -46,6 +47,7 @@
 		C3504D05296D4DE800201DF7 /* SetupSelectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */; };
 		C3BD4D4229739A61009F577E /* SetUpItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4D4129739A61009F577E /* SetUpItemLabel.swift */; };
 		C3BD4D44297CD8EE009F577E /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4D43297CD8EE009F577E /* LaunchScreen.swift */; };
+		C3F0148B2984FB220060EB03 /* AdMobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0148A2984FB220060EB03 /* AdMobBannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,9 @@
 		603AEC9A29042709008B396D /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		603AEC9C29042DEF008B396D /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		604441F1293B46A20075E5CD /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
+		852707550B4970AA38A3B241 /* Pods-Astrum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astrum.debug.xcconfig"; path = "Target Support Files/Pods-Astrum/Pods-Astrum.debug.xcconfig"; sourceTree = "<group>"; };
+		B812DFE7002E5C7479E49015 /* Pods_Astrum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Astrum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C29166FDA865DE8C7DE0D6A9 /* Pods-Astrum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Astrum.release.xcconfig"; path = "Target Support Files/Pods-Astrum/Pods-Astrum.release.xcconfig"; sourceTree = "<group>"; };
 		C314C95B293B7D360053868E /* DisplayScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayScreenView.swift; sourceTree = "<group>"; };
 		C314C95D293B7DFA0053868E /* DisplayFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFrameView.swift; sourceTree = "<group>"; };
 		C314C95F293B7E450053868E /* DisplayStandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayStandView.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 		C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSelectItemView.swift; sourceTree = "<group>"; };
 		C3BD4D4129739A61009F577E /* SetUpItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpItemLabel.swift; sourceTree = "<group>"; };
 		C3BD4D43297CD8EE009F577E /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		C3F0148A2984FB220060EB03 /* AdMobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 			files = (
 				C3504CFA2969262B00201DF7 /* RealmSwift in Frameworks */,
 				C3504CF82969262B00201DF7 /* Realm in Frameworks */,
+				1443BADE8F7136BF04E0FB43 /* Pods_Astrum.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +115,8 @@
 			children = (
 				603AEC862903FDCC008B396D /* Astrum */,
 				603AEC852903FDCC008B396D /* Products */,
+				DC8BD691621DC9B3B34F2A18 /* Pods */,
+				A2211580DE6E8BC8D61BA758 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +131,7 @@
 		603AEC862903FDCC008B396D /* Astrum */ = {
 			isa = PBXGroup;
 			children = (
+				C3F0148A2984FB220060EB03 /* AdMobBannerView.swift */,
 				603AEC8B2903FDCC008B396D /* Assets.xcassets */,
 				603AEC872903FDCC008B396D /* AstrumApp.swift */,
 				603AEC892903FDCC008B396D /* ContentView.swift */,
@@ -157,6 +167,14 @@
 				C32BA68B2940C8CF00E7D0D4 /* Modifier */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		A2211580DE6E8BC8D61BA758 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B812DFE7002E5C7479E49015 /* Pods_Astrum.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C32BA68A2940C7BE00E7D0D4 /* DisplayView */ = {
@@ -276,6 +294,15 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		DC8BD691621DC9B3B34F2A18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				852707550B4970AA38A3B241 /* Pods-Astrum.debug.xcconfig */,
+				C29166FDA865DE8C7DE0D6A9 /* Pods-Astrum.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,9 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 603AEC922903FDCC008B396D /* Build configuration list for PBXNativeTarget "Astrum" */;
 			buildPhases = (
+				BEA4378E6A6388E354545F3A /* [CP] Check Pods Manifest.lock */,
 				603AEC802903FDCC008B396D /* Sources */,
 				603AEC812903FDCC008B396D /* Frameworks */,
 				603AEC822903FDCC008B396D /* Resources */,
+				1134144A06B0507A845AE813 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -350,6 +379,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1134144A06B0507A845AE813 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Astrum/Pods-Astrum-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Astrum/Pods-Astrum-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Astrum/Pods-Astrum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEA4378E6A6388E354545F3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Astrum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		603AEC802903FDCC008B396D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -369,6 +440,7 @@
 				C32BA69529421F4F00E7D0D4 /* ImageManager.swift in Sources */,
 				C314C968293CB3D80053868E /* ItemView.swift in Sources */,
 				C3504CF32961D1EA00201DF7 /* WishListView.swift in Sources */,
+				C3F0148B2984FB220060EB03 /* AdMobBannerView.swift in Sources */,
 				C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */,
 				C32BA6A029458A0400E7D0D4 /* FavoritesView.swift in Sources */,
 				C3BD4D4229739A61009F577E /* SetUpItemLabel.swift in Sources */,
@@ -510,6 +582,7 @@
 		};
 		603AEC932903FDCC008B396D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 852707550B4970AA38A3B241 /* Pods-Astrum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -541,6 +614,7 @@
 		};
 		603AEC942903FDCC008B396D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C29166FDA865DE8C7DE0D6A9 /* Pods-Astrum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

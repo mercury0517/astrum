@@ -68,7 +68,7 @@ struct WishListView: View {
                 .padding(16)
             }
         }
-        .padding(.bottom, 16)
+        .padding(.bottom, 66) // AdMob分の余白を開ける
     }
     
     // アイテムがある位置によってデフォルトカラーを4色から選ぶ
