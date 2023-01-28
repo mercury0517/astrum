@@ -9,7 +9,9 @@ import MessageUI
 import SwiftUI
 
 struct SettingView: View {
-    @State private var isShowingMailView = false
+    @State private var isShowingMail = false
+    @State private var isShowingTermOfUse = false
+    @State private var isShowingPrivacyPolicy = false
 
     init() {
         let navigationBarAppearance = UINavigationBarAppearance()
@@ -25,25 +27,39 @@ struct SettingView: View {
     var body: some View {
         NavigationStack {
             List {
-                Text("外観")
-                    .listRowBackground(Color.matteBlack)
-                    .foregroundColor(.white)
-
                 Button(action: {
-                    self.isShowingMailView.toggle()
+                    self.isShowingMail.toggle()
                 }) {
                     Text("お問い合わせ・機能のご要望")
                 }
                     .disabled(!MFMailComposeViewController.canSendMail())
-                    .sheet(isPresented: $isShowingMailView, content: {
-                        MailView(isShowing: self.$isShowingMailView)
+                    .sheet(isPresented: $isShowingMail, content: {
+                        MailView(isShowing: self.$isShowingMail)
                     })
                     .listRowBackground(Color.matteBlack)
                     .foregroundColor(.white)
 
-                Text("利用規約")
+                Button(action: {
+                    self.isShowingTermOfUse.toggle()
+                }) {
+                    Text("利用規約")
+                }
+                .sheet(isPresented: $isShowingTermOfUse, content: {
+                    WebView(isprivacyPolicy: false)
+                })
                     .listRowBackground(Color.matteBlack)
                     .foregroundColor(.white)
+
+                Button(action: {
+                    self.isShowingPrivacyPolicy.toggle()
+                }) {
+                    Text("プライバシーポリシー")
+                }
+                .sheet(isPresented: $isShowingPrivacyPolicy, content: {
+                    WebView(isprivacyPolicy: true)
+                })
+                .listRowBackground(Color.matteBlack)
+                .foregroundColor(.white)
             }
             .scrollContentBackground(.hidden)
             .background(.black)

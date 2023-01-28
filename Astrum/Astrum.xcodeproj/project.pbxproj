@@ -49,6 +49,7 @@
 		C3BD4D44297CD8EE009F577E /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4D43297CD8EE009F577E /* LaunchScreen.swift */; };
 		C3F0148B2984FB220060EB03 /* AdMobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0148A2984FB220060EB03 /* AdMobBannerView.swift */; };
 		C3F0148E298502F10060EB03 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0148D298502F10060EB03 /* MailView.swift */; };
+		C3F0149029850A990060EB03 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0148F29850A990060EB03 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		C3BD4D43297CD8EE009F577E /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		C3F0148A2984FB220060EB03 /* AdMobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBannerView.swift; sourceTree = "<group>"; };
 		C3F0148D298502F10060EB03 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		C3F0148F29850A990060EB03 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */,
+				C3F0148F29850A990060EB03 /* WebView.swift */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				60235CED292CF22E0086CC3D /* MyDeskView.swift in Sources */,
 				C32BA69B29449EAE00E7D0D4 /* BackgroundView.swift in Sources */,
 				C3504D03296BEF7F00201DF7 /* SetupDetailView.swift in Sources */,
+				C3F0149029850A990060EB03 /* WebView.swift in Sources */,
 				C3504CEE2961CA5000201DF7 /* SetupView.swift in Sources */,
 				C32BA6922940CA4E00E7D0D4 /* ImageExtension.swift in Sources */,
 			);
