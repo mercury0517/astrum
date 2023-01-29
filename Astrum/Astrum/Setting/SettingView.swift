@@ -6,6 +6,7 @@
 //
 
 import MessageUI
+import StoreKit
 import SwiftUI
 
 struct SettingView: View {
@@ -38,6 +39,16 @@ struct SettingView: View {
                     })
                     .listRowBackground(Color.matteBlack)
                     .foregroundColor(.white)
+
+                Button(action: {
+                    if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                        SKStoreReviewController.requestReview(in: scene)
+                    }
+                }) {
+                    Text("⭐︎をつけてアプリを応援")
+                }
+                .listRowBackground(Color.matteBlack)
+                .foregroundColor(.white)
 
                 Button(action: {
                     self.isShowingTermOfUse.toggle()
