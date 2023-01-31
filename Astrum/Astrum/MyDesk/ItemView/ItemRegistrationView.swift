@@ -178,6 +178,7 @@ struct ItemRegistrationView: View {
                         }
                     }
                 }
+                .scrollDismissesKeyboard(.immediately)
             }
             .toolbar() {
                 ToolbarItemGroup(placement: .keyboard) {
