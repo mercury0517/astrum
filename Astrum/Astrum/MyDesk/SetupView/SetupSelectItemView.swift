@@ -73,9 +73,10 @@ struct SetupSelectItemView: View {
                 }
                 .cornerRadius(8)
                 .disabled(selectedValues.count == 0)
-                
+
                 Spacer()
             }
+            .background(Color.matteBlack)
             .navigationTitle("アイテムの選択")
             .navigationBarTitleDisplayMode(.inline)
         }
