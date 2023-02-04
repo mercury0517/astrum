@@ -23,7 +23,7 @@ struct SetupCellView: View {
                 Circle()
                     .fill(itemColor)
                     .frame(width: itemSize, height: itemSize)
-                
+
                 Image(systemName: "display")
                     .resizable()
                     .scaledToFit()

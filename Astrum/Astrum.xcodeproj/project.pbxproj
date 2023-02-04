@@ -45,6 +45,7 @@
 		C3504D01296BB02000201DF7 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D00296BB02000201DF7 /* NotificationExtension.swift */; };
 		C3504D03296BEF7F00201DF7 /* SetupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */; };
 		C3504D05296D4DE800201DF7 /* SetupSelectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */; };
+		C388AE2E298E4F6D00CA3377 /* AstrumProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C388AE2D298E4F6D00CA3377 /* AstrumProView.swift */; };
 		C3BD4D4229739A61009F577E /* SetUpItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4D4129739A61009F577E /* SetUpItemLabel.swift */; };
 		C3BD4D44297CD8EE009F577E /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4D43297CD8EE009F577E /* LaunchScreen.swift */; };
 		C3F0148B2984FB220060EB03 /* AdMobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0148A2984FB220060EB03 /* AdMobBannerView.swift */; };
@@ -93,6 +94,7 @@
 		C3504D00296BB02000201DF7 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		C3504D02296BEF7F00201DF7 /* SetupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDetailView.swift; sourceTree = "<group>"; };
 		C3504D04296D4DE700201DF7 /* SetupSelectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSelectItemView.swift; sourceTree = "<group>"; };
+		C388AE2D298E4F6D00CA3377 /* AstrumProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrumProView.swift; sourceTree = "<group>"; };
 		C3BD4D4129739A61009F577E /* SetUpItemLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpItemLabel.swift; sourceTree = "<group>"; };
 		C3BD4D43297CD8EE009F577E /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		C3F0148A2984FB220060EB03 /* AdMobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBannerView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		C32BA6932942034700E7D0D4 /* MyDesk */ = {
 			isa = PBXGroup;
 			children = (
+				C388AE2D298E4F6D00CA3377 /* AstrumProView.swift */,
 				C32BA68A2940C7BE00E7D0D4 /* DisplayView */,
 				C32BA6962943565D00E7D0D4 /* ItemView */,
 				60235CEC292CF22E0086CC3D /* MyDeskView.swift */,
@@ -446,6 +449,7 @@
 				C314C96A293CB4700053868E /* ItemDetailView.swift in Sources */,
 				C3504CE22960117000201DF7 /* ItemCellView.swift in Sources */,
 				603AEC882903FDCC008B396D /* AstrumApp.swift in Sources */,
+				C388AE2E298E4F6D00CA3377 /* AstrumProView.swift in Sources */,
 				C314C964293C77040053868E /* HapticFeedbackManager.swift in Sources */,
 				C32BA68D2940C8F000E7D0D4 /* SectionTitle.swift in Sources */,
 				C3504D01296BB02000201DF7 /* NotificationExtension.swift in Sources */,
