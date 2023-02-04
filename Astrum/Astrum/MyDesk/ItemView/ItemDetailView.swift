@@ -79,14 +79,7 @@ struct ItemDetailView: View {
                         if
                             let urlString = item.url?.trimmingCharacters(in: .whitespaces),
                             let url = URL(string: urlString)
-                        {
-                            VStack(alignment: .leading) {
-                                Link(url.absoluteString, destination: url)
-                                    .foregroundColor(.blue)
-                                    .padding(.leading, 16)
-                                    .padding(.trailing, 16)
-                            }
-                            
+                        {   
                             Link(destination: url, label: {
                                 Text(url.absoluteString)
                                     .multilineTextAlignment(.leading)
