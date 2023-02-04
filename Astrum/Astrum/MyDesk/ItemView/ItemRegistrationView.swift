@@ -199,7 +199,7 @@ struct ItemRegistrationView: View {
             let selectedImageData,
             let newImage = UIImage(data: selectedImageData)
         {
-            ImageManager.shared.writeImage(name: newItemID, uiImage: newImage)
+            ImageManager.shared.writeImage(name: newItemID, uiImage: getCorrectOrientationUIImage(uiImage: newImage))
         }
 
         // 入力された情報で新規アイテムオブジェクトを作成
@@ -246,7 +246,7 @@ struct ItemRegistrationView: View {
                     let selectedImageData,
                     let newImage = UIImage(data: selectedImageData)
                 {
-                    ImageManager.shared.writeImage(name: item.id, uiImage: newImage)
+                    ImageManager.shared.writeImage(name: item.id, uiImage: getCorrectOrientationUIImage(uiImage: newImage))
                     itemImage = newImage // 詳細画面の画像も更新する
                 }
             }
@@ -258,6 +258,23 @@ struct ItemRegistrationView: View {
         items = Array(cachedItemList.filter("isWishList == \(isWishList)")) // 所持しているアイテムのみを抽出
 
         HapticFeedbackManager.shared.play(.impact(.soft))
+    }
+
+    private func getCorrectOrientationUIImage(uiImage: UIImage) -> UIImage {
+        var newImage = UIImage()
+        switch uiImage.imageOrientation.rawValue {
+         case 1:
+            guard let orientedCIImage = CIImage(image: uiImage)?.oriented(CGImagePropertyOrientation.down),
+                  let cgImage = CIContext().createCGImage(orientedCIImage, from: orientedCIImage.extent) else { print("Image rotation failed."); return uiImage}
+            newImage = UIImage(cgImage: cgImage)
+        case 3:
+            guard let orientedCIImage = CIImage(image: uiImage)?.oriented(CGImagePropertyOrientation.right),
+                  let cgImage = CIContext().createCGImage(orientedCIImage, from: orientedCIImage.extent) else { print("Image rotation failed."); return uiImage}
+           newImage = UIImage(cgImage: cgImage)
+        default:
+           newImage = uiImage
+        }
+        return newImage
     }
 }
 
