@@ -4,8 +4,11 @@
 <dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3800500699089039~3790595257</string>
-	<key>SKAdNetworkIdentifier</key>
-	<string>cstr6suwn9.skadnetwork</string>
+	<key>SKAdNetworkItems</key>
+	<dict>
+		<key>SKAdNetworkIdentifier</key>
+		<string>cstr6suwn9.skadnetwork</string>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ZenAntique-Regular.ttf</string>
