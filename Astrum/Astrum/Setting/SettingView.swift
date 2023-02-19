@@ -13,6 +13,7 @@ struct SettingView: View {
     @State private var isShowingMail = false
     @State private var isShowingTermOfUse = false
     @State private var isShowingPrivacyPolicy = false
+    @State private var isShowingChangeIcon = false
 
     init() {
         let navigationBarAppearance = UINavigationBarAppearance()
@@ -39,6 +40,33 @@ struct SettingView: View {
                     })
                     .listRowBackground(Color.matteBlack)
                     .foregroundColor(.white)
+
+                Button(action: {
+                    self.isShowingChangeIcon = true
+                }) {
+                    Text("アプリのアイコン変更")
+                }
+                .sheet(isPresented: $isShowingChangeIcon, content: {
+                    VStack {
+                        Button(action: {
+                            // アイコンを背景白のものに切り替え
+                            UIApplication.shared.setAlternateIconName("AppIconWhite") { _ in }
+                        }) {
+                            Text("アイコン変更")
+                        }
+                        .padding(16)
+
+                        Button(action: {
+                            // アイコンをデフォルトに戻す
+                            UIApplication.shared.setAlternateIconName(nil) { _ in }
+                        }) {
+                            Text("アイコン変更")
+                        }
+                        .padding(16)
+                    }
+                })
+                .listRowBackground(Color.matteBlack)
+                .foregroundColor(.white)
 
                 Button(action: {
                     if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
