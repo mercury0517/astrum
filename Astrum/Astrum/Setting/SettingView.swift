@@ -47,23 +47,7 @@ struct SettingView: View {
                     Text("アプリのアイコン変更")
                 }
                 .sheet(isPresented: $isShowingChangeIcon, content: {
-                    VStack {
-                        Button(action: {
-                            // アイコンを背景白のものに切り替え
-                            UIApplication.shared.setAlternateIconName("AppIconWhite") { _ in }
-                        }) {
-                            Text("アイコン変更")
-                        }
-                        .padding(16)
-
-                        Button(action: {
-                            // アイコンをデフォルトに戻す
-                            UIApplication.shared.setAlternateIconName(nil) { _ in }
-                        }) {
-                            Text("アイコン変更")
-                        }
-                        .padding(16)
-                    }
+                    AppIconSettingView()
                 })
                 .listRowBackground(Color.matteBlack)
                 .foregroundColor(.white)

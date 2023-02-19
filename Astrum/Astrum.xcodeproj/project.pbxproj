@@ -31,6 +31,8 @@
 		C32BA69B29449EAE00E7D0D4 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */; };
 		C32BA69D2944B0F900E7D0D4 /* ItemRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */; };
 		C32BA6A029458A0400E7D0D4 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32BA69F29458A0400E7D0D4 /* FavoritesView.swift */; };
+		C349AA5229A246AF00FF2616 /* AppIconSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C349AA5129A246AF00FF2616 /* AppIconSettingView.swift */; };
+		C349AA5429A24C4400FF2616 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C349AA5329A24C4400FF2616 /* ListButtonStyle.swift */; };
 		C3504CE22960117000201DF7 /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3504CE12960117000201DF7 /* ItemCellView.swift */; };
 		C3504CE62960210A00201DF7 /* ZenAntique-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3504CE42960210A00201DF7 /* ZenAntique-Regular.ttf */; };
 		C3504CE72960210A00201DF7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C3504CE52960210A00201DF7 /* OFL.txt */; };
@@ -81,6 +83,8 @@
 		C32BA69A29449EAE00E7D0D4 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		C32BA69C2944B0F900E7D0D4 /* ItemRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRegistrationView.swift; sourceTree = "<group>"; };
 		C32BA69F29458A0400E7D0D4 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		C349AA5129A246AF00FF2616 /* AppIconSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettingView.swift; sourceTree = "<group>"; };
+		C349AA5329A24C4400FF2616 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
 		C3504CE12960117000201DF7 /* ItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellView.swift; sourceTree = "<group>"; };
 		C3504CE42960210A00201DF7 /* ZenAntique-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenAntique-Regular.ttf"; sourceTree = "<group>"; };
 		C3504CE52960210A00201DF7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		C32BA68B2940C8CF00E7D0D4 /* Modifier */ = {
 			isa = PBXGroup;
 			children = (
+				C349AA5329A24C4400FF2616 /* ListButtonStyle.swift */,
 				C32BA68C2940C8F000E7D0D4 /* SectionTitle.swift */,
 				C3504CEA296124C700201DF7 /* SimpleTextField.swift */,
 			);
@@ -305,8 +310,9 @@
 		C3F0148C298502C70060EB03 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				C3504CF429641C1000201DF7 /* SettingView.swift */,
+				C349AA5129A246AF00FF2616 /* AppIconSettingView.swift */,
 				C3F0148D298502F10060EB03 /* MailView.swift */,
+				C3504CF429641C1000201DF7 /* SettingView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				603AEC882903FDCC008B396D /* AstrumApp.swift in Sources */,
 				C388AE2E298E4F6D00CA3377 /* AstrumProView.swift in Sources */,
 				C314C964293C77040053868E /* HapticFeedbackManager.swift in Sources */,
+				C349AA5229A246AF00FF2616 /* AppIconSettingView.swift in Sources */,
 				C32BA68D2940C8F000E7D0D4 /* SectionTitle.swift in Sources */,
 				C3504D01296BB02000201DF7 /* NotificationExtension.swift in Sources */,
 				603AEC962903FE3B008B396D /* GlassCardView.swift in Sources */,
@@ -463,6 +470,7 @@
 				C32BA6A029458A0400E7D0D4 /* FavoritesView.swift in Sources */,
 				C3BD4D4229739A61009F577E /* SetUpItemLabel.swift in Sources */,
 				C3504CEB296124C700201DF7 /* SimpleTextField.swift in Sources */,
+				C349AA5429A24C4400FF2616 /* ListButtonStyle.swift in Sources */,
 				C3F0148E298502F10060EB03 /* MailView.swift in Sources */,
 				C3504CFD2969268D00201DF7 /* DeskItem.swift in Sources */,
 				603AEC9B29042709008B396D /* ColorExtension.swift in Sources */,
@@ -604,7 +612,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 852707550B4970AA38A3B241 /* Pods-Astrum.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = AppIconWhite;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconWhite AppIconSun AppIconMorningGlow AppIconMonotone AppIconDeepSea";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -641,7 +649,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C29166FDA865DE8C7DE0D6A9 /* Pods-Astrum.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = AppIconWhite;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconWhite AppIconSun AppIconMorningGlow AppIconMonotone AppIconDeepSea";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
