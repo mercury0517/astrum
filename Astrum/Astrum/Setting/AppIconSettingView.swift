@@ -16,11 +16,7 @@ struct AppIconSettingView: View {
                         UIApplication.shared.setAlternateIconName(iconType.iconName) { _ in }
                     }) {
                         HStack {
-                            Image(uiImage: UIImage(named: iconType.iconName ?? "AppIcon") ?? UIImage())
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 57, height: 57)
-                                .cornerRadius(9)
+                            AppIconView(iconName: iconType.iconName ?? "AppIcon")
                                 .padding(.trailing, 8)
 
                             Text(iconType.displayName)
