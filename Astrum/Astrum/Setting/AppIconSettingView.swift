@@ -41,8 +41,8 @@ enum AppIconType: CaseIterable {
     case dark
     case light
     case monotone
-    case deepSea
-    case morningGlow
+    case marine
+    case burning
     case sun
 
     var displayName: String {
@@ -53,10 +53,10 @@ enum AppIconType: CaseIterable {
             return "Light"
         case .monotone:
             return "Monotone"
-        case .deepSea:
-            return "Deep sea"
-        case .morningGlow:
-            return "Morning glow"
+        case .marine:
+            return "Marine"
+        case .burning:
+            return "Burning"
         case .sun:
             return "Sun"
         }
@@ -70,9 +70,9 @@ enum AppIconType: CaseIterable {
             return "AppIconWhite"
         case .monotone:
             return "AppIconMonotone"
-        case .deepSea:
+        case .marine:
             return "AppIconDeepSea"
-        case .morningGlow:
+        case .burning:
             return "AppIconMorningGlow"
         case .sun:
             return "AppIconSun"
